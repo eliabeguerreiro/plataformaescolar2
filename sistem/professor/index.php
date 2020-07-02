@@ -174,7 +174,7 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
                             if(!$erro){
                                 //só para testes
                                 $_SESSION['nome'] = 'prof aleatorio';
-                                $result_usuario = "INSERT INTO material VALUES (0,'" .$dados['titulo']. "','" .$dados['detalhes']. "','" .$dados['link']. "','" .$dados['turma']. "')";
+                                $result_usuario = "INSERT INTO material VALUES (0,'" .$dados['titulo']. "','" .$dados['detalhes']. "','" .$dados['link']. "','" .$dados['turma']. "','" .$dados['disciplina']. "')";
                                 //echo $result_usuario;
                                 $resultado_usario = mysqli_query($conn, $result_usuario);
                                 //var_dump($resultado_usario);
@@ -199,6 +199,8 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
                     <input type="link" name="link" placeholder="Link do material">
                     <br><label>Turma:</label><br>
                     <input type="codigo" name="turma" placeholder="Código da turma">
+                    <br><label>Disciplina:</label><br>
+                    <input type="codigo" name="disciplina" placeholder="Disciplina">
                     <br><label>Descrição:</label><br>
                     <textarea type="text-box" name="detalhes" rows="4" cols="50">
                     </textarea><br>
@@ -233,7 +235,7 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
                             if(!$erro){
                                 //só para testes
                                 $_SESSION['nome'] = 'prof aleatorio';
-                                $result_usuario = "INSERT INTO atividade VALUES (0,'" .$dados['titulo']. "','" .$dados['detalhes']. "','" .$dados['link']. "','" .$dados['turma']. "')";
+                                $result_usuario = "INSERT INTO atividade VALUES (0,'" .$dados['titulo']. "','" .$dados['detalhes']. "','" .$dados['link']. "','" .$dados['turma']. "','" .$dados['disciplina']."')";
                                 //echo $result_usuario;
                                 $resultado_usario = mysqli_query($conn, $result_usuario);
                                 //var_dump($resultado_usario);
@@ -258,6 +260,8 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
                     <input type="link" name="link" placeholder="Link da atividade">
                     <br><label>Turma:</label><br>
                     <input type="codigo" name="turma" placeholder="Código da turma">
+                    <br><label>Disciplina:</label><br>
+                    <input type="codigo" name="disciplina" placeholder="Disciplina">
                     <br><label>Descrição:</label><br>
                     <textarea type="text-box" name="detalhes" rows="4" cols="50">
                     </textarea><br>
