@@ -24,7 +24,7 @@ if ($pagina == 'dados'){
     <body>
     <h1>Painel do Aluno</h1>
         <a href='index.php'>voltar</a>
-        <div class="junbotrom">
+        <div class="junbotron">
             <!-- Organizar lista de links das disciplinas recursivo ao banco de dados setado pelo professor -->
             <h2>Dados do aluno:</h2> 
             os dados aparecem aqui
@@ -35,7 +35,7 @@ if ($pagina == 'dados'){
             integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
         </script>
     </body>
-
+</div>
     </html>
     <?php   
 }else{
@@ -49,7 +49,7 @@ if ($pagina == 'dados'){
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Painel</title>
+        <title>Painel Aluno</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
             integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
@@ -63,7 +63,7 @@ if ($pagina == 'dados'){
         <br>
         <a href='index.php?area=#'>Sair</a>
 
-        <div class="junbotrom">
+        <div class="junbotron">
             <!-- Organizar lista de links das disciplinas recursivo ao banco de dados setado pelo professor -->
             <h2>Disciplinas:</h2> 
             <h3><a href='#'>Diciplina x prof x periodo x</a></h3>
@@ -74,7 +74,7 @@ if ($pagina == 'dados'){
             integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
         </script>
     </body>
-
+</div>
     </html>
     <?php 
 }
