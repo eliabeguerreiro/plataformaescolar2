@@ -1,5 +1,6 @@
 <?php
 session_start();
+include("../conexao.php");
 $pagina=isset($_GET['area'])? $_GET['area'] : 'turmas';
 
 
@@ -86,6 +87,48 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
             <?php
             }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             if ($pagina == 'painel-sala-aula'){
                 ?>
             <h1>Painel do Professor</h1><!-- link para index sem pagina -->
@@ -96,35 +139,24 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
             </br>
             <div class="junbotron container">
                 <?php
-                        if(isset($_SESSION['msg'])){
-                            echo "<div class='alert alert-danger' role='alert'>";
-                            echo$_SESSION['msg'];
-                            echo"</div>";
-                            unset($_SESSION['msg']);
-                        }
+                        
 
                         $btnCadUsuario = filter_input(INPUT_POST, 'btnCadUsuario', FILTER_SANITIZE_STRING);
                         if($btnCadUsuario){
-                            include_once 'functions/conexao.php';
+    
                             $dados_rc = filter_input_array(INPUT_POST, FILTER_DEFAULT);
                             $erro = false;
                             $dados_st = array_map('strip_tags', $dados_rc);
                             $dados = array_map('trim', $dados_st);
-                            //var_dump($dados);
-                            if(in_array('',$dados)){
+                            var_dump($dados);
+                            if($dados['titulo'] == '' || $dados['disciplina'] == '' || $dados['video1'] == '' || $dados['turma'] == ''){
                                 $erro = true;
-                                $_SESSION['msg'] = "Necessário preencher todos os campos";
-                            }else{          
-                                $result_usuario = "SELECT id FROM aulas WHERE link='". $dados['link'] ."'";
-                                $resultado_usuario = mysqli_query($conn, $result_usuario);
-                                if(($resultado_usuario) AND ($resultado_usuario->num_rows != 0)){
-                                    $erro = true;
-                                    $_SESSION['msg'] = "Esta video já foi cadastrado";
-                                }
+                                $_SESSION['msg'] = "Necessário preencher os campos obrigatórios";
                             }
                             if(!$erro){
-                                $tipo = $dados['turma'];
-                                $result_usuario = "INSERT INTO aulas (num_fila, link, sala, nome) VALUES ('" .$dados['numero']. "','" .$dados['link']. "','$tipo', '" .$dados['nome']. "')";
+                                //só para testes
+                                $_SESSION['nome'] = 'prof aleatorio';
+                                $result_usuario = "INSERT INTO aulas VALUES ('" .$dados['titulo']. "','" .$dados['disciplina']. "','" .$dados['turma']. "','" .$_SESSION['nome']. "','" .$dados['video1']. "', '" .$dados['video2']. "','" .$dados['video3']. "','" .$dados['video4']. "','" .$dados['material']. "','" .$dados['atividade']. "','" .$dados['detalhes']. "')";
                                 $resultado_usario = mysqli_query($conn, $result_usuario);
                                 if(mysqli_insert_id($conn)){
                                     $_SESSION['msg'] = "Video cadastrado com sucesso";
@@ -133,21 +165,33 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
                                 }
                             }
                         }
+                        if(isset($_SESSION['msg'])){
+                            echo "<div class='alert alert-danger' role='alert'>";
+                            echo$_SESSION['msg'];
+                            echo"</div>";
+                            unset($_SESSION['msg']);
+                        }
                 ?>
                 <form method="POST" action="">
-                    <label>Número na Fila</label>
-                    <input type="number" name="numero" placeholder="Digite um número"><br>
-                    <label>Link</label>
-                    <input type="link" name="link" placeholder="Digite apenas o código contido na url">
-                    <label>Título da Aula</label>
-                    <input type="name" name="nome" placeholder="Digite com atenção">
-                    <br>
-                    <label for="turma">Turma</label>
-                    <select name="turma">
-                        <option value="">--</option>
-                        <option value="sala-teste">Sala Teste</option>
-                    </select><br>
-                    <input type="submit" name="btnCadUsuario" value="Cadastrar"><br>
+                    <label>Título da Aula:</label><br>
+                    <input type="name" name="titulo" placeholder="Título"><br>
+                    <label>Disciplina:</label><br>
+                    <input type="name" name="disciplina" placeholder="Disciplina"><br>
+                    <label>Videos:</label><br>
+                    <input type="link" name="video1" placeholder="Código da url">
+                    <input type="link" name="video2" placeholder="Código da url">
+                    <input type="link" name="video4" placeholder="Código da url">
+                    <input type="link" name="video3" placeholder="Código da url">
+                    <br><label>Turma:</label><br>
+                    <input type="codigo" name="turma" placeholder="Código da turma">
+                    <br><label>Material de Apoio:</label><br>
+                    <input type="link" name="material" placeholder="Link do material">
+                    <br><label>Atividade:</label><br>
+                    <input type="link" name="atividade" placeholder="Link da atividade">
+                    <br><label>Descrição:</label><br>
+                    <textarea type="text-box" name="detalhes" placeholder="Descrição da Aula"  rows="4" cols="50">
+                    </textarea><br>
+                    <input class = "mt-1" type="submit" name="btnCadUsuario" value="Adicionar"><br>
                 </form>
             </div>
 
@@ -194,6 +238,50 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
     </html>
     <?php   
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 if($pagina == 'turmas'){
 
