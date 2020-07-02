@@ -3,7 +3,6 @@ session_start();
 include("../conexao.php");
 $pagina=isset($_GET['area'])? $_GET['area'] : 'turmas';
 
-
 if ($pagina == 'frequencia'){
     ?>
 <div id="content">
@@ -30,8 +29,6 @@ if ($pagina == 'frequencia'){
             <h2>Sistema de frequencia:</h2>
             Formulario que irá gerar uma tabela de presença semanal
         </div>
-
-
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
             integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
         </script>
@@ -40,7 +37,6 @@ if ($pagina == 'frequencia'){
     </html>
     <?php   
 }
-
 
 if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'painel-material' || $pagina == 'painel-atividade'){
     ?>
@@ -77,57 +73,8 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
                 <a class="text-decoration-none text-reset" href="index.php?area=painel-atividade"><button type="button"
                         class="btn btn-primary">Adicionar Atividade</button></a>
             </div>
-
-
-
-
-
-
-
             <?php
             }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             if ($pagina == 'painel-sala-aula'){
                 ?>
@@ -148,7 +95,7 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
                             $erro = false;
                             $dados_st = array_map('strip_tags', $dados_rc);
                             $dados = array_map('trim', $dados_st);
-                            var_dump($dados);
+                            //var_dump($dados);
                             if($dados['titulo'] == '' || $dados['disciplina'] == '' || $dados['video1'] == '' || $dados['turma'] == '' || $dados['detalhes'] == ''){
                                 $erro = true;
                                 $_SESSION['msg'] = "Necessário preencher os campos obrigatórios";
@@ -163,7 +110,7 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
                                 if(mysqli_insert_id($conn)){
                                     $_SESSION['msg'] = "Aula cadastrada com sucesso";
                                 }else{
-                                    $_SESSION['msg'] = "Erro ao cadastrar o video";
+                                    $_SESSION['msg'] = "Erro ao cadastrar a aula";
                                 }
                             }
                         }
@@ -191,56 +138,14 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
                     <br><label>Atividade:</label><br>
                     <input type="link" value="NULL" name="atividade" placeholder="Link da atividade">
                     <br><label>Descrição:</label><br>
-                    <textarea type="text-box" name="detalhes" placeholder="Descrição da Aula"  rows="4" cols="50">
+                    <textarea type="text-box" name="detalhes" placeholder="Descrição da Aula" rows="4" cols="50">
                     </textarea><br>
-                    <input class = "mt-1" type="submit" name="btnCadUsuario" value="Adicionar"><br>
+                    <input class="mt-1" type="submit" name="btnCadUsuario" value="Adicionar"><br>
                 </form>
             </div>
 
             <?php
             }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             if ($pagina == 'painel-material'){
                 ?>
@@ -251,7 +156,7 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
             <h2>Adicionar Material</h2>
             </br>
             <div class="junbotron container">
-            <?php
+                <?php
                         
 
                         $btnCadUsuario = filter_input(INPUT_POST, 'btnCadUsuario', FILTER_SANITIZE_STRING);
@@ -261,7 +166,7 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
                             $erro = false;
                             $dados_st = array_map('strip_tags', $dados_rc);
                             $dados = array_map('trim', $dados_st);
-                            var_dump($dados);
+                            //var_dump($dados);
                             if(in_array('',$dados)){
                                 $erro = true;
                                 $_SESSION['msg'] = "Necessário preencher os campos obrigatórios";
@@ -295,121 +200,86 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
                     <br><label>Turma:</label><br>
                     <input type="codigo" name="turma" placeholder="Código da turma">
                     <br><label>Descrição:</label><br>
-                    <textarea type="text-box" name="detalhes" placeholder="Descrição da Aula"  rows="4" cols="50">
+                    <textarea type="text-box" name="detalhes" rows="4" cols="50">
                     </textarea><br>
-                    <input class = "mt-1" type="submit" name="btnCadUsuario" value="Adicionar"><br>
+                    <input class="mt-1" type="submit" name="btnCadUsuario" value="Adicionar"><br>
                 </form>
-            
-            </div>    
+
+            </div>
             <?php
             }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             if ($pagina == 'painel-atividade'){
                 ?>
-                <h1>Painel do Professor</h1><!-- link para index sem pagina -->
-                <a href='index.php?area=painel-sala-aula'>Adicionar Aula</a>
-                <a href='index.php?area=painel-material'>Adicionar Material</a>
-                <a href='index.php?area=painel-sala'>voltar</a>
-                <h2>Adicionar Atividade</h2>
-                </br>
-                <div class="junbotron container">
-                    formulario de atividades aqui
-                </div>
+            <h1>Painel do Professor</h1><!-- link para index sem pagina -->
+            <a href='index.php?area=painel-sala-aula'>Adicionar Aula</a>
+            <a href='index.php?area=painel-material'>Adicionar Material</a>
+            <a href='index.php?area=painel-sala'>voltar</a>
+            <h2>Adicionar Atividade</h2>
+            </br>
+            <div class="junbotron container">
                 <?php
+                $btnCadUsuario = filter_input(INPUT_POST, 'btnCadUsuario', FILTER_SANITIZE_STRING);
+                        if($btnCadUsuario){
+                            $dados_rc = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+                            $erro = false;
+                            $dados_st = array_map('strip_tags', $dados_rc);
+                            $dados = array_map('trim', $dados_st);
+                            //var_dump($dados);
+                            if(in_array('',$dados)){
+                                $erro = true;
+                                $_SESSION['msg'] = "Necessário preencher os campos obrigatórios";
+                            }
+                            if(!$erro){
+                                //só para testes
+                                $_SESSION['nome'] = 'prof aleatorio';
+                                $result_usuario = "INSERT INTO atividade VALUES (0,'" .$dados['titulo']. "','" .$dados['detalhes']. "','" .$dados['link']. "','" .$dados['turma']. "')";
+                                //echo $result_usuario;
+                                $resultado_usario = mysqli_query($conn, $result_usuario);
+                                //var_dump($resultado_usario);
+                                if(mysqli_insert_id($conn)){
+                                    $_SESSION['msg'] = "Atividade cadastrado com sucesso";
+                                }else{
+                                    $_SESSION['msg'] = "Erro ao cadastrar a atividade";
+                                }
+                            }
+                        }
+                        if(isset($_SESSION['msg'])){
+                            echo "<div class='alert alert-danger' role='alert'>";
+                            echo$_SESSION['msg'];
+                            echo"</div>";
+                            unset($_SESSION['msg']);
+                        }
+                ?>
+                <form method="POST" action="">
+                    <label>Título do Atividade:</label><br>
+                    <input type="name" name="titulo" placeholder="Título"><br>
+                    <label>Link:</label><br>
+                    <input type="link" name="link" placeholder="Link da atividade">
+                    <br><label>Turma:</label><br>
+                    <input type="codigo" name="turma" placeholder="Código da turma">
+                    <br><label>Descrição:</label><br>
+                    <textarea type="text-box" name="detalhes" rows="4" cols="50">
+                    </textarea><br>
+                    <input class="mt-1" type="submit" name="btnCadUsuario" value="Adicionar"><br>
+                </form>
+            </div>
+            <?php
             }
 
             ?>
 
 
-                    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-                        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-                        crossorigin="anonymous">
-                    </script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+                integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+                crossorigin="anonymous">
+            </script>
         </body>
     </div>
 
     </html>
     <?php   
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 if($pagina == 'turmas'){
 
