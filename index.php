@@ -30,7 +30,7 @@ session_start();
     ?>
         <p>
             <div class="jumbotron  container">
-                <form method="POST" action="functions/verifica-login.php">
+                <form method="POST" action="sistem/verifica-login.php">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Matrícula</label>
                         <input type="matricula" class="form-control" id="exampleInputEmail1"
