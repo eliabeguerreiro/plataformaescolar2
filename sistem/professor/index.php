@@ -193,7 +193,9 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
 
     </html>
     <?php   
-}else{
+}
+
+if($pagina == 'turmas'){
 
     ?>
     <div id="content">
