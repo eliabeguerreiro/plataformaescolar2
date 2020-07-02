@@ -161,7 +161,7 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
                                 $resultado_usario = mysqli_query($conn, $result_usuario);
                                 //var_dump($resultado_usario);
                                 if(mysqli_insert_id($conn)){
-                                    $_SESSION['msg'] = "Video cadastrado com sucesso";
+                                    $_SESSION['msg'] = "Aula cadastrada com sucesso";
                                 }else{
                                     $_SESSION['msg'] = "Erro ao cadastrar o video";
                                 }
@@ -199,6 +199,49 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
 
             <?php
             }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             if ($pagina == 'painel-material'){
                 ?>
             <h1>Painel do Professor</h1><!-- link para index sem pagina -->
@@ -208,10 +251,93 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
             <h2>Adicionar Material</h2>
             </br>
             <div class="junbotron container">
-                formulario de materiais aqui
+            <?php
+                        
+
+                        $btnCadUsuario = filter_input(INPUT_POST, 'btnCadUsuario', FILTER_SANITIZE_STRING);
+                        if($btnCadUsuario){
+    
+                            $dados_rc = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+                            $erro = false;
+                            $dados_st = array_map('strip_tags', $dados_rc);
+                            $dados = array_map('trim', $dados_st);
+                            var_dump($dados);
+                            if(in_array('',$dados)){
+                                $erro = true;
+                                $_SESSION['msg'] = "Necessário preencher os campos obrigatórios";
+                            }
+                            if(!$erro){
+                                //só para testes
+                                $_SESSION['nome'] = 'prof aleatorio';
+                                $result_usuario = "INSERT INTO material VALUES (0,'" .$dados['titulo']. "','" .$dados['detalhes']. "','" .$dados['link']. "','" .$dados['turma']. "')";
+                                //echo $result_usuario;
+                                $resultado_usario = mysqli_query($conn, $result_usuario);
+                                //var_dump($resultado_usario);
+                                if(mysqli_insert_id($conn)){
+                                    $_SESSION['msg'] = "Material cadastrado com sucesso";
+                                }else{
+                                    $_SESSION['msg'] = "Erro ao cadastrar o material";
+                                }
+                            }
+                        }
+                        if(isset($_SESSION['msg'])){
+                            echo "<div class='alert alert-danger' role='alert'>";
+                            echo$_SESSION['msg'];
+                            echo"</div>";
+                            unset($_SESSION['msg']);
+                        }
+                ?>
+                <form method="POST" action="">
+                    <label>Título do Material:</label><br>
+                    <input type="name" name="titulo" placeholder="Título"><br>
+                    <label>Link:</label><br>
+                    <input type="link" name="link" placeholder="Link do material">
+                    <br><label>Turma:</label><br>
+                    <input type="codigo" name="turma" placeholder="Código da turma">
+                    <br><label>Descrição:</label><br>
+                    <textarea type="text-box" name="detalhes" placeholder="Descrição da Aula"  rows="4" cols="50">
+                    </textarea><br>
+                    <input class = "mt-1" type="submit" name="btnCadUsuario" value="Adicionar"><br>
+                </form>
+            
             </div>    
             <?php
             }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             if ($pagina == 'painel-atividade'){
                 ?>
