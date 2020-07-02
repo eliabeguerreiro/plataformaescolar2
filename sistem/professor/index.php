@@ -149,15 +149,17 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
                             $dados_st = array_map('strip_tags', $dados_rc);
                             $dados = array_map('trim', $dados_st);
                             var_dump($dados);
-                            if($dados['titulo'] == '' || $dados['disciplina'] == '' || $dados['video1'] == '' || $dados['turma'] == ''){
+                            if($dados['titulo'] == '' || $dados['disciplina'] == '' || $dados['video1'] == '' || $dados['turma'] == '' || $dados['detalhes'] == ''){
                                 $erro = true;
                                 $_SESSION['msg'] = "Necessário preencher os campos obrigatórios";
                             }
                             if(!$erro){
                                 //só para testes
                                 $_SESSION['nome'] = 'prof aleatorio';
-                                $result_usuario = "INSERT INTO aulas VALUES ('" .$dados['titulo']. "','" .$dados['disciplina']. "','" .$dados['turma']. "','" .$_SESSION['nome']. "','" .$dados['video1']. "', '" .$dados['video2']. "','" .$dados['video3']. "','" .$dados['video4']. "','" .$dados['material']. "','" .$dados['atividade']. "','" .$dados['detalhes']. "')";
+                                $result_usuario = "INSERT INTO aulas VALUES (0,'" .$dados['titulo']. "','" .$dados['disciplina']. "','" .$dados['turma']. "','" .$_SESSION['nome']. "','" .$dados['video1']. "', '" .$dados['video2']. "','" .$dados['video3']. "','" .$dados['video4']. "','" .$dados['material']. "','" .$dados['atividade']. "','" .$dados['detalhes']. "')";
+                                //echo $result_usuario;
                                 $resultado_usario = mysqli_query($conn, $result_usuario);
+                                //var_dump($resultado_usario);
                                 if(mysqli_insert_id($conn)){
                                     $_SESSION['msg'] = "Video cadastrado com sucesso";
                                 }else{
@@ -179,15 +181,15 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
                     <input type="name" name="disciplina" placeholder="Disciplina"><br>
                     <label>Videos:</label><br>
                     <input type="link" name="video1" placeholder="Código da url">
-                    <input type="link" name="video2" placeholder="Código da url">
-                    <input type="link" name="video4" placeholder="Código da url">
-                    <input type="link" name="video3" placeholder="Código da url">
+                    <input type="link" value="NULL" name="video2" placeholder="Código da url">
+                    <input type="link" value="NULL" name="video4" placeholder="Código da url">
+                    <input type="link" value="NULL" name="video3" placeholder="Código da url">
                     <br><label>Turma:</label><br>
                     <input type="codigo" name="turma" placeholder="Código da turma">
                     <br><label>Material de Apoio:</label><br>
-                    <input type="link" name="material" placeholder="Link do material">
+                    <input type="link" value="NULL" name="material" placeholder="Link do material">
                     <br><label>Atividade:</label><br>
-                    <input type="link" name="atividade" placeholder="Link da atividade">
+                    <input type="link" value="NULL" name="atividade" placeholder="Link da atividade">
                     <br><label>Descrição:</label><br>
                     <textarea type="text-box" name="detalhes" placeholder="Descrição da Aula"  rows="4" cols="50">
                     </textarea><br>
