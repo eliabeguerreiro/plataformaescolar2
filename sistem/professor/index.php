@@ -103,7 +103,7 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
                             if(!$erro){
                                 //só para testes
                                 $_SESSION['nome'] = 'prof aleatorio';
-                                $result_usuario = "INSERT INTO aulas VALUES (0,'" .$dados['titulo']. "','" .$dados['disciplina']. "','" .$dados['turma']. "','" .$_SESSION['nome']. "','" .$dados['video1']. "', '" .$dados['video2']. "','" .$dados['video3']. "','" .$dados['video4']. "','" .$dados['material']. "','" .$dados['atividade']. "','" .$dados['detalhes']. "')";
+                                $result_usuario = "INSERT INTO aulas VALUES (0,'" .$dados['titulo']. "','" .$dados['disciplina']. "','" .$dados['turma']. "','" .$_SESSION['nome']. "','" .$dados['video1']. "', '" .$dados['video2']. "','" .$dados['video3']. "','" .$dados['video4']. "','" .$dados['material']. "','" .$dados['atividade']. "','" .$dados['detalhes']. "','" .$dados['numero']. "')";
                                 //echo $result_usuario;
                                 $resultado_usario = mysqli_query($conn, $result_usuario);
                                 //var_dump($resultado_usario);
@@ -139,7 +139,9 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
                     <input type="link" value="NULL" name="atividade" placeholder="Link da atividade">
                     <br><label>Descrição:</label><br>
                     <textarea type="text-box" name="detalhes" placeholder="Descrição da Aula" rows="4" cols="50">
-                    </textarea><br>
+                    </textarea>
+                    <br><label>Numero da Aula:</label><br>
+                    <input type="number" name="numero" placeholder="Número da Aula"><br>
                     <input class="mt-1" type="submit" name="btnCadUsuario" value="Adicionar"><br>
                 </form>
             </div>
