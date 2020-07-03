@@ -20,7 +20,15 @@ if($btnLogin){
     			$nh .='Dia: '. date('d/m/Y') .' Hora: '.date('h:i:s');
 				$relat = "INSERT INTO `entrada` (`matricula`, `entrada`) VALUES ('" .$_SESSION['matricula']. "','$nh')";
 				$resultado_usario = mysqli_query($conn, $relat);
-				header("Location:aluno/");//isso vai mudar
+				if($_SESSION['cargo'] == 'admin'){
+					echo"<a href='aluno/'>Painel de Aluno</a><br>";
+					echo"<a href='aluno/'>Painel de Professor</a>";
+				}elseif($_SESSION['cargo'] == 'aluno'){
+					header("Location:aluno/");
+				}elseif($_SESSION['cargo'] == 'aluno'){
+					header("Location:professor/");
+				}
+				
 			}else{
 				$_SESSION['msg'] = "Login e senha incorreto!";
 				header("Location: ../index.php");

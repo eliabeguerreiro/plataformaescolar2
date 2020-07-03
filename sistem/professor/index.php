@@ -235,7 +235,7 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
                             if(!$erro){
                                 //só para testes
                                 $_SESSION['nome'] = 'prof aleatorio';
-                                $result_usuario = "INSERT INTO atividade-prof VALUES (0,'" .$dados['titulo']. "','" .$dados['detalhes']. "','" .$dados['link']. "','" .$dados['turma']. "','" .$dados['disciplina']."')";
+                                $result_usuario = "INSERT INTO `atividade-prof` VALUES (0,'" .$dados['titulo']. "','" .$dados['detalhes']. "','" .$dados['link']. "','" .$dados['turma']. "','" .$dados['disciplina']."')";
                                 //echo $result_usuario;
                                 $resultado_usario = mysqli_query($conn, $result_usuario);
                                 //var_dump($resultado_usario);

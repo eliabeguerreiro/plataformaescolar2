@@ -1,6 +1,12 @@
 <?php
 session_start();
+include("../conexao.php");
+$sql = "SELECT * FROM `dados-aluno` WHERE matricula = '" .$_SESSION['matricula']. "'";
+//echo $sql;
+$dadosAluno = mysqli_fetch_array(mysqli_query($conn, $sql));
+//var_dump($dadosAluno);
 $pagina=isset($_GET['area'])? $_GET['area'] : 'turmas';
+
 
 
 if ($pagina == 'dados'){
@@ -22,11 +28,11 @@ if ($pagina == 'dados'){
     </head>
 
     <body>
-    <h1>Painel do Aluno</h1>
+        <h1>Painel do Aluno</h1>
         <a href='index.php'>voltar</a>
         <div class="junbotron">
             <!-- Organizar lista de links das disciplinas recursivo ao banco de dados setado pelo professor -->
-            <h2>Dados do aluno:</h2> 
+            <h2>Dados do aluno:</h2>
             os dados aparecem aqui
         </div>
 
@@ -36,9 +42,13 @@ if ($pagina == 'dados'){
         </script>
     </body>
 </div>
-    </html>
-    <?php   
-}else{
+
+</html>
+<?php   
+}
+
+
+if($pagina == 'turmas'){
 
     ?>
 <div id="content">
@@ -65,16 +75,47 @@ if ($pagina == 'dados'){
 
         <div class="junbotron">
             <!-- Organizar lista de links das disciplinas recursivo ao banco de dados setado pelo professor -->
-            <h2>Disciplinas:</h2> 
-            <h3><a href='#'>Diciplina x prof x periodo x</a></h3>
+            <h2>Disciplinas:</h2>
+            <?php
+                
+            echo"<h3><a href='#'>Diciplina x prof x periodo x</a></h3>";
+
+
+
+
+
+
+
+                //criar pagina pra da disciplina e botar o trecho pegar aula ai em baixo
+
+
+                $sql = "SELECT * FROM `aulas` WHERE turma = '" .$dadosAluno['cod-turma']. "'";
+                //echo $sql;
+                $rows = mysqli_num_rows(mysqli_query($conn, $sql));
+                //var_dump($rows);
+                $r = $rows;
+                while($r != 0){
+                    $sql = "SELECT `titulo`, `disciplina`,`professor`,`texto` FROM `aulas` WHERE fila = " .$r. " AND turma = '" .$dadosAluno['cod-turma']. "'";
+                    echo $sql;
+                    $aulas = mysqli_fetch_array(mysqli_query($conn, $sql));
+                    var_dump($aulas);
+                    $r -=1;
+                    //var_dump($rows);
+                    var_dump($r);
+                }
+                
+                
+
+
+
+            ?>
         </div>
-
-
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
             integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
         </script>
     </body>
 </div>
-    </html>
-    <?php 
+
+</html>
+<?php 
 }
