@@ -64,6 +64,7 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
             <h1>Painel do Professor</h1><!-- link para index sem pagina -->
             <a href='index.php'>voltar</a>
             <h2>Painel das Salas de Aula</h2>
+            tabela com codigo de turmas pra o prof n esquecer
             </br>
             <div class="junbotron container">
                 <a class="text-decoration-none text-reset" href="index.php?area=painel-sala-aula"><button type="button"
@@ -317,8 +318,8 @@ if($pagina == 'turmas'){
 
             <div class="junbotrom">
                 <!-- Organizar lista de links das turmas cadastradas a esse professor -->
-                <h2>Turmas:</h2>
-                <h3><a href='#'>Turma x periodo x </a></h3>
+                <h2>Prof fulano de tal:</h2>                
+                gerador de aulas/atividades/materiais por turma pra ele poder apagar elas 
                 <!-- Seria interessante aparecer aqui a ultima aula/atividade setada -->
             </div>
 
