@@ -143,6 +143,7 @@ if ($pagina == 'painel-disciplina'){
                      //var_dump($rows);
                      $r = $rows;
                      while($r != 0){
+                         //setar a turma e a disciplina
                          $sql = "SELECT `titulo`, `disciplina`,`professor`,`texto` FROM `aulas` WHERE fila = " .$r. " AND turma = '" .$dadosAluno['cod-turma']. "'";
                          echo $sql;
                          $aulas = mysqli_fetch_array(mysqli_query($conn, $sql));
