@@ -22,7 +22,7 @@ if($btnLogin){
 				$resultado_usario = mysqli_query($conn, $relat);
 				if($_SESSION['cargo'] == 'admin'){
 					echo"<a href='aluno/'>Painel de Aluno</a><br>";
-					echo"<a href='aluno/'>Painel de Professor</a>";
+					echo"<a href='professor/'>Painel de Professor</a>";
 				}elseif($_SESSION['cargo'] == 'aluno'){
 					header("Location:aluno/");
 				}elseif($_SESSION['cargo'] == 'aluno'){

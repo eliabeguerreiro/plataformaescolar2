@@ -127,6 +127,8 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
                     <input type="name" name="titulo" placeholder="Título"><br>
                     <label>Disciplina:</label><br>
                     <input type="name" name="disciplina" placeholder="Disciplina"><br>
+                    <br><label>Turma:</label><br>
+                    <input type="codigo" name="turma" placeholder="Código da turma">
                     <label>Videos:</label><br>
                     <input type="link" name="video1" placeholder="Código da url">
                     <input type="link" value="NULL" name="video2" placeholder="Código da url">
