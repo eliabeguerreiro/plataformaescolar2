@@ -10,6 +10,61 @@
     <link rel="stylesheet" href="estilo-painel.css">
 </head>
 <body>
+    <nav id="sidebar">
+
+        <div class="sidebar-header col">
+            <h3>Painel Joker</h3>
+            <a class="text-decoration-none text-reset" href="../index.php"><button type="button"
+                    class="btn btn-danger col">
+                    Sair</button></a><br>
+        </div>
+        <ul class="list-unstyled components">
+
+            <p>Acesso Nivel 2</p>
+            <li>
+                <a href="?pg=nvprj">Projetos</a>
+            </li>
+            <li>
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
+                    class="dropdown-toggle">Cadastrar</a>
+                <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <li>
+                        <a href="?pg=nvprj">Novo Projeto</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
+                    class="dropdown-toggle">Postar</a>
+                <ul class="collapse list-unstyled" id="pageSubmenu">
+                    <li>
+                        <a href="#">Postar Lançamento</a>
+                    </li>
+                    <li>
+                        <a href="#">Postar Aviso</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#desesTressar" data-toggle="collapse" aria-expanded="false"
+                    class="dropdown-toggle">Desestressar</a>
+                <ul class="collapse list-unstyled" id="desesTressar">
+                    <li>
+                        <a href="#">Xingar o Matsu</a>
+                    </li>
+                    <li>
+                        <a href="#">Ver Foto de Deus</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+
+            </li>
+
+        </ul>
+    </nav>
+    
     <div class="junbotron container">
         <button class="accordion border">Titulo da Aula</button>
         <div class="panel">
@@ -25,9 +80,6 @@
         </div>
 
     </div> 
-    
-    
-
 
 
 
