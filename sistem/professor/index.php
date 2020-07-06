@@ -1,7 +1,13 @@
 <?php
 session_start();
+//var_dump($_SESSION);
 include("../conexao.php");
+$sql = "SELECT * FROM `dados-professor` WHERE matricula = '" .$_SESSION['matricula']. "'";
+//echo $sql;
+$dadosProf = mysqli_fetch_array(mysqli_query($conn, $sql));
+//var_dump($dadosAluno);
 $pagina=isset($_GET['area'])? $_GET['area'] : 'turmas';
+$professor = $_SESSION['matricula'];
 
 if ($pagina == 'frequencia'){
     ?>
@@ -321,7 +327,29 @@ if($pagina == 'turmas'){
             <div class="junbotrom">
                 <!-- Organizar lista de links das turmas cadastradas a esse professor -->
                 <h2>Prof fulano de tal:</h2>                
-                gerador de aulas/atividades/materiais por turma pra ele poder apagar elas 
+
+
+                <div class="junbotron container">
+                <?php
+                     $sql = "SELECT * FROM `aulas` WHERE disciplina = '" .$dadosProf['disciplina']. "'";
+                     echo $sql;
+                     $rows = mysqli_num_rows(mysqli_query($conn, $sql));
+                     var_dump($rows);
+                     $r = $rows;
+                     while($r != 0){
+                         //setar a turma e a disciplina
+                         $sql = "SELECT `titulo`, `disciplina`,`professor`,`texto`, `turma` FROM `aulas` WHERE fila = " .$r. " AND disciplina = '" .$dadosProf['disciplina']. "'";
+                         echo $sql;
+                         $aulas = mysqli_fetch_array(mysqli_query($conn, $sql));
+                         var_dump($aulas);
+                         $r -=1;
+                         var_dump($rows);
+                         var_dump($r);
+                     }   
+                ?>
+             </div>
+               
+
                 <!-- Seria interessante aparecer aqui a ultima aula/atividade setada -->
             </div>
 
