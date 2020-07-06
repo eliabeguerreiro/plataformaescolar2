@@ -1,0 +1,12 @@
+===================================================================================================================
+Fomualario de envio de atividades :
+
+<form method="POST" action="">
+            <label>Envio de Respostas:</label><br>
+            <input type="link" name="link" placeholder="Link do doc-respostas">
+            <button name="btnCadUsuario" type="submit" class="btn btn-primary" value="Adicionar">Enviar</button>
+
+        </form>
+
+===================================================================================================================
+

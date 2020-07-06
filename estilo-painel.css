@@ -1,0 +1,23 @@
+.accordion {
+    background-color: #ccc;
+    color: rgb(27, 34, 66);
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+  }
+  
+.active, .accordion:hover {
+    background-color: rgb(116, 156, 240);
+  }
+  
+ .panel {
+    padding: 0 18px;
+    background-color: rgb(103, 128, 182);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
