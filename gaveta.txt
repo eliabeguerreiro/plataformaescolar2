@@ -10,3 +10,380 @@ Fomualario de envio de atividades :
 
 ===================================================================================================================
 
+sistema com passagem de slide e slide-bar retratil completasssoo
+
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo sanfona</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js"></script>
+    <link rel="stylesheet" href="estilo-painel.css">
+</head>
+
+
+
+
+
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top shadow navbar-dark navbar-offcanvas"
+        style="background-color: #155592;">
+        <a class="navbar-brand mr-auto" href="#">DECOM STUDIO</a>
+
+        <button class="navbar-toggler d-block" type="button" id="navToggle">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse offcanvas-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="https://www.youtube.com/c/decomtvs">Dashboard <span
+                            class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.youtube.com/c/decomtvs">Notifications</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.youtube.com/c/decomtvs">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.youtube.com/c/decomtvs" target="_blank">Developer</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Settings</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <a class="dropdown-item" href="https://www.youtube.com/c/decomtvs">Action</a>
+                        <a class="dropdown-item" href="https://www.youtube.com/c/decomtvs">Another action</a>
+                        <a class="dropdown-item" href="https://www.youtube.com/c/decomtvs">Something else here</a>
+                    </div>
+                </li>
+            </ul>
+
+
+        </div>
+    </nav>
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="remasterizado-noh.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>First slide label</h5>
+                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="remasterizado-noh.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Second slide label</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="remasterizado-noh.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Third slide label</h5>
+                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+
+
+
+    <div class="container text-center">
+        <div class="junbotron container">
+            <button class="accordion">Titulo da Aula</button>
+            <div class="panel">
+                <h4 class="border-bottom">
+                    <a href="#">Videoaulas</a>
+                </h4>
+                <h5 class="border-bottom">
+                    <a href="#">Material auxiliar</a>
+                </h5>
+                <h5 class="border-bottom">
+                    <a href="#">Exercicios</a>
+                </h5>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+    <script>
+        $(document).ready(function () {
+            console.log("document is ready");
+            $('[data-toggle="offcanvas"], #navToggle').on('click', function () {
+                $('.offcanvas-collapse').toggleClass('open')
+            })
+        });
+        window.onload = function () {
+            console.log("window is loaded");
+        };
+
+    </script>
+    </body>
+</html>
+
+
+CSS:
+
+
+
+.accordion {
+    background-color: #ccc;
+    color: rgb(27, 34, 66);
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+  }
+  
+.active, .accordion:hover {
+    background-color: rgb(116, 156, 240);
+  }
+  
+ .panel {
+    padding: 0 18px;
+    background-color: rgb(103, 128, 182);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+
+  body{
+    font-family: 'Poppins', sans-serif;
+    background: #fafafa;   
+}
+p{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+}
+a,
+a:hover,
+a:focus{
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+
+/*Side Bar*/
+
+.wrapper{
+    display: flex;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+#sidebarCollapse{
+    float: left;
+}
+
+#sidebar{
+    min-width: 250px;
+    max-width: 250px;
+    background: #7386D5;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+#sidebar active{
+    margin-left: -250px;
+}
+
+#sidebar.siderbar-header{
+    padding: 20px;
+    background: #6d7fcc;
+}
+
+#sidebar ul.components{
+    padding: 20px 0;
+    border-bottom: solid #47748b;
+}
+
+#sidebar ul p{
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a{
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+
+#sidebar ul li a:hover{
+    color:#7386D5;
+    background: #fff; 
+}
+
+#sidebar ul li.active>a,
+a[aria-expanded="true"] {
+    color: #fff;
+    background: #c6cbe2;
+}
+
+a[data-toggle="collapse"]{
+    position: relative;
+}
+
+.dropdown-toggle::after{
+     display: block;
+     position: absolute;
+     top: 50%;
+     right: 20%;
+     transform: translateY(-50%);
+}
+
+ul ul a{
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #959fc9;
+}
+
+#content{
+    width: 100%;
+    padding: 20px;
+    min-height: 100vh;
+    transition: all 0.3s;
+}
+
+#thumb{
+    width: 200px;
+    height: 200px;
+
+}
+
+body {
+overflow-x: hidden;
+}
+body {
+padding-top: 56px;
+}
+.offcanvas-collapse {
+position: fixed;
+top: 56px;
+bottom: 0;
+right: 100%;
+left: -300px;
+width: 300px;
+padding-right: 1rem;
+padding-left: 1rem;
+overflow-y: auto;
+visibility: hidden;
+background-color: /*#343a40*//*#f8f9fa*/#155592;
+transition-timing-function: ease-in-out;
+transition-duration: .3s;
+transition-property: left, visibility;
+}
+
+.offcanvas-collapse {
+align-items: start;
+-moz-background-clip: padding;
+-webkit-background-clip: padding;
+background-clip: padding-box;
+border-right: 5px solid rgba(0, 0, 0, 0.2);
+
+}
+
+.offcanvas-collapse.open {
+left: 0;
+visibility: visible;
+}
+
+.navbar-expand-lg .navbar-nav {
+-ms-flex-direction: column;
+flex-direction: column;
+}
+
+.nav-scroller {
+position: relative;
+z-index: 2;
+height: 2.75rem;
+overflow-y: hidden;
+}
+.nav-scroller .nav {
+display: -ms-flexbox;
+display: flex;
+-ms-flex-wrap: nowrap;
+flex-wrap: nowrap;
+padding-bottom: 1rem;
+margin-top: -1px;
+overflow-x: auto;
+color: rgba(255, 255, 255, .75);
+text-align: center;
+white-space: nowrap;
+-webkit-overflow-scrolling: touch;
+}
+
+.nav-underline .nav-link {
+padding-top: .75rem;
+padding-bottom: .75rem;
+font-size: .875rem;
+color: #6c757d;
+}
+
+.nav-underline .nav-link:hover {
+color: #007bff;
+}
+
+.nav-underline .active {
+font-weight: 500;
+color: #343a40;
+}
+
+
+
+===================================================================================================================
