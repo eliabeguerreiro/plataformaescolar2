@@ -194,7 +194,7 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
             }
 
             if ($pagina == 'painel-sala-aula'){
-                ?>      
+                ?>
             <nav class="navbar navbar-expand-lg fixed-top shadow navbar-dark navbar-offcanvas"
                 style="background-color: #155592;">
 
@@ -204,7 +204,8 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
                 <a class="navbar-brand ml-auto mr-auto text-center" href="#">Painel do Professor
                     <!-- link para index sem pagina --></a>
 
-                <button type="button" class="btn btn-danger float-right"><a href='index.php?area=painel-sala'>Voltar</a></button>
+                <button type="button" class="btn btn-danger float-right"><a
+                        href='index.php?area=painel-sala'>Voltar</a></button>
 
                 <div class="navbar-collapse offcanvas-collapse">
                     <ul class="navbar-nav mr-auto">
@@ -229,14 +230,14 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
                     </ul>
                 </div>
             </nav>
-  
-            
+
+
             <h2>Adicionar Aula</h2>
             </br>
-            
-          
-            <div class="junbotron container">             
-             <?php
+
+
+            <div class="junbotron container">
+                <?php
                         
                         $btnCadUsuario = filter_input(INPUT_POST, 'btnCadUsuario', FILTER_SANITIZE_STRING);
                         if($btnCadUsuario){
@@ -303,7 +304,7 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
 
             if ($pagina == 'painel-material'){
                 ?>
-                <nav class="navbar navbar-expand-lg fixed-top shadow navbar-dark navbar-offcanvas"
+            <nav class="navbar navbar-expand-lg fixed-top shadow navbar-dark navbar-offcanvas"
                 style="background-color: #155592;">
 
                 <button class="navbar-toggler d-block float-left" type="button" id="navToggle">
@@ -312,7 +313,8 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
                 <a class="navbar-brand ml-auto mr-auto text-center" href="#">Painel do Professor
                     <!-- link para index sem pagina --></a>
 
-                <button type="button" class="btn btn-danger float-right"><a href='index.php?area=painel-sala'>Voltar</a></button>
+                <button type="button" class="btn btn-danger float-right"><a
+                        href='index.php?area=painel-sala'>Voltar</a></button>
 
 
 
@@ -339,9 +341,9 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
                     </ul>
                 </div>
             </nav>
-           
-  
-           
+
+
+
             <h2>Adicionar Material</h2>
             </br>
             <div class="junbotron container">
@@ -401,7 +403,7 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
             }
 
             if ($pagina == 'painel-atividade'){
-                ?>  
+                ?>
             <nav class="navbar navbar-expand-lg fixed-top shadow navbar-dark navbar-offcanvas"
                 style="background-color: #155592;">
 
@@ -411,7 +413,8 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
                 <a class="navbar-brand ml-auto mr-auto text-center" href="#">Painel do Professor
                     <!-- link para index sem pagina --></a>
 
-                <button type="button" class="btn btn-danger float-right"><a href='index.php?area=painel-sala'>Voltar</a></button>
+                <button type="button" class="btn btn-danger float-right"><a
+                        href='index.php?area=painel-sala'>Voltar</a></button>
 
 
 
@@ -438,8 +441,8 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
                     </ul>
                 </div>
             </nav>
-            
-    
+
+
             <h2>Adicionar Atividade</h2>
             </br>
             <div class="junbotron container">
@@ -631,21 +634,21 @@ if($pagina == 'turmas'){
                          echo("<a class = 'titulodaula' href='#'>".$aulas['titulo'].' | '.$aulas['turma']."</a>");
                         ?>
 
-
-                            <button type="button" class="btn btn-danger float-right"><svg width="1em" height="1em"
-                                    viewBox="0 0 16 16" class="bi bi-trash-fill" fill="currentColor"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z" />
-                                </svg></button>
-                            <button type="button" class="btn btn-warning float-right"><svg width="1em" height="1em"
-                                    viewBox="0 0 16 16" class="bi bi-pencil" fill="currentColor"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M11.293 1.293a1 1 0 0 1 1.414 0l2 2a1 1 0 0 1 0 1.414l-9 9a1 1 0 0 1-.39.242l-3 1a1 1 0 0 1-1.266-1.265l1-3a1 1 0 0 1 .242-.391l9-9zM12 2l2 2-9 9-3 1 1-3 9-9z" />
-                                    <path fill-rule="evenodd"
-                                        d="M12.146 6.354l-2.5-2.5.708-.708 2.5 2.5-.707.708zM3 10v.5a.5.5 0 0 0 .5.5H4v.5a.5.5 0 0 0 .5.5H5v.5a.5.5 0 0 0 .5.5H6v-1.5a.5.5 0 0 0-.5-.5H5v-.5a.5.5 0 0 0-.5-.5H3z" />
-                                </svg></button>
+                            <!--Pensar em um jeito de mandar a aula pra outra pagina lá-->
+                            <a href="apagar-aula.php?p=<?php echo$aulas['titulo'];?>" title="Apagar aula"><button type="button" class="btn btn-danger float-right"><svg width="1em"
+                                        height="1em" viewBox="0 0 16 16" class="bi bi-trash-fill" fill="currentColor"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z" />
+                                    </svg></button></a>
+                            <a href="editar-aula.php?p=#" title="Editar aula"><button type="button" class="btn btn-warning float-right "><svg width="1em"
+                                        height="1em" viewBox="0 0 16 16" class="bi bi-pencil" fill="currentColor"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M11.293 1.293a1 1 0 0 1 1.414 0l2 2a1 1 0 0 1 0 1.414l-9 9a1 1 0 0 1-.39.242l-3 1a1 1 0 0 1-1.266-1.265l1-3a1 1 0 0 1 .242-.391l9-9zM12 2l2 2-9 9-3 1 1-3 9-9z" />
+                                        <path fill-rule="evenodd"
+                                            d="M12.146 6.354l-2.5-2.5.708-.708 2.5 2.5-.707.708zM3 10v.5a.5.5 0 0 0 .5.5H4v.5a.5.5 0 0 0 .5.5H5v.5a.5.5 0 0 0 .5.5H6v-1.5a.5.5 0 0 0-.5-.5H5v-.5a.5.5 0 0 0-.5-.5H3z" />
+                                    </svg></button></a>
 
 
 
@@ -667,7 +670,7 @@ if($pagina == 'turmas'){
                 <!-- Seria interessante aparecer aqui a ultima aula/atividade setada -->
             </div>
 
-
+            
             <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
                 integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
                 crossorigin="anonymous"></script>
