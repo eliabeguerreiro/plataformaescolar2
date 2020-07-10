@@ -93,3 +93,4 @@ $_SESSION['id'] = $pg;
         </center>
     </body> 
 </html>
+<?php
