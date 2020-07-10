@@ -88,7 +88,8 @@ if ($pagina == 'frequencia'){
             integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
         </script>
         <script>
-        var acc = document.getElementsByClassName("accordion");
+        < script >
+            var acc = document.getElementsByClassName("accordion");
         var i;
 
         for (i = 0; i < acc.length; i++) {
@@ -621,44 +622,49 @@ if($pagina == 'turmas'){
                      $r = $rows;
                      while($r != 0){
                          //setar a turma e a disciplina
-                         $sql = "SELECT `titulo`, `disciplina`,`professor`,`texto`, `turma` FROM `aulas` WHERE fila = " .$r. " AND disciplina = '" .$dadosProf['disciplina']. "'";
+                         $sql = "SELECT * FROM `aulas` WHERE fila = " .$r. " AND disciplina = '" .$dadosProf['disciplina']. "'";
                          //echo $sql;
-                         $aulas = mysqli_fetch_array(mysqli_query($conn, $sql));
-                         //var_dump($aulas);
-                         ?>
-
+                         
+                         if (mysqli_num_rows(mysqli_query($conn, $sql)) != 0){
+                            $aulas = mysqli_fetch_array(mysqli_query($conn, $sql));       
+                            ?>
                     <div class="card mb-1">
                         <div class="card-body">
+                            
                             <?php
                             
                          echo("<a class = 'titulodaula' href='#'>".$aulas['titulo'].' | '.$aulas['turma']."</a>");
-                        ?>
+                         //var_dump($aulas);
+                         ?>     
+                         <!--Pensar em um jeito de mandar a aula pra outra pagina lá-->
+                         <a href="apagar-aula.php?id=<?php echo$aulas['id'];?>" title="Apagar aula"><button
+                                 type="button" class="btn btn-danger float-right"><svg width="1em" height="1em"
+                                     viewBox="0 0 16 16" class="bi bi-trash-fill" fill="currentColor"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                     <path fill-rule="evenodd"
+                                         d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z" />
+                                 </svg></button></a>
+                         <a href="editar-aula.php?id=#" title="Editar aula"><button type="button"
+                                 class="btn btn-warning float-right "><svg width="1em" height="1em"
+                                     viewBox="0 0 16 16" class="bi bi-pencil" fill="currentColor"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                     <path fill-rule="evenodd"
+                                         d="M11.293 1.293a1 1 0 0 1 1.414 0l2 2a1 1 0 0 1 0 1.414l-9 9a1 1 0 0 1-.39.242l-3 1a1 1 0 0 1-1.266-1.265l1-3a1 1 0 0 1 .242-.391l9-9zM12 2l2 2-9 9-3 1 1-3 9-9z" />
+                                     <path fill-rule="evenodd"
+                                         d="M12.146 6.354l-2.5-2.5.708-.708 2.5 2.5-.707.708zM3 10v.5a.5.5 0 0 0 .5.5H4v.5a.5.5 0 0 0 .5.5H5v.5a.5.5 0 0 0 .5.5H6v-1.5a.5.5 0 0 0-.5-.5H5v-.5a.5.5 0 0 0-.5-.5H3z" />
+                                 </svg></button></a>
 
-                            <!--Pensar em um jeito de mandar a aula pra outra pagina lá-->
-                            <a href="apagar-aula.php?p=<?php echo$aulas['titulo'];?>" title="Apagar aula"><button type="button" class="btn btn-danger float-right"><svg width="1em"
-                                        height="1em" viewBox="0 0 16 16" class="bi bi-trash-fill" fill="currentColor"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd"
-                                            d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z" />
-                                    </svg></button></a>
-                            <a href="editar-aula.php?p=#" title="Editar aula"><button type="button" class="btn btn-warning float-right "><svg width="1em"
-                                        height="1em" viewBox="0 0 16 16" class="bi bi-pencil" fill="currentColor"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd"
-                                            d="M11.293 1.293a1 1 0 0 1 1.414 0l2 2a1 1 0 0 1 0 1.414l-9 9a1 1 0 0 1-.39.242l-3 1a1 1 0 0 1-1.266-1.265l1-3a1 1 0 0 1 .242-.391l9-9zM12 2l2 2-9 9-3 1 1-3 9-9z" />
-                                        <path fill-rule="evenodd"
-                                            d="M12.146 6.354l-2.5-2.5.708-.708 2.5 2.5-.707.708zM3 10v.5a.5.5 0 0 0 .5.5H4v.5a.5.5 0 0 0 .5.5H5v.5a.5.5 0 0 0 .5.5H6v-1.5a.5.5 0 0 0-.5-.5H5v-.5a.5.5 0 0 0-.5-.5H3z" />
-                                    </svg></button></a>
+                     </div>
+                 </div>
 
+                 <?php
+                                                
+                        }
+                         
+                         
+                        
 
-
-
-
-
-                        </div>
-                    </div>
-
-                    <?php
+                          
                          $r -=1;
                          //var_dump($rows);
                          //var_dump($r);
@@ -670,7 +676,7 @@ if($pagina == 'turmas'){
                 <!-- Seria interessante aparecer aqui a ultima aula/atividade setada -->
             </div>
 
-            
+
             <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
                 integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
                 crossorigin="anonymous"></script>
