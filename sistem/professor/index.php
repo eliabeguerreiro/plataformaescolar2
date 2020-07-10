@@ -625,6 +625,35 @@ if($pagina == 'turmas'){
                          $sql = "SELECT * FROM `aulas` WHERE fila = " .$r. " AND disciplina = '" .$dadosProf['disciplina']. "'";
                          //echo $sql;
                          
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         //RESOLVER PROBLEMA COMO CONTADOR
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                          if (mysqli_num_rows(mysqli_query($conn, $sql)) != 0){
                             $aulas = mysqli_fetch_array(mysqli_query($conn, $sql));       
                             ?>
@@ -661,10 +690,6 @@ if($pagina == 'turmas'){
                                                 
                         }
                          
-                         
-                        
-
-                          
                          $r -=1;
                          //var_dump($rows);
                          //var_dump($r);
@@ -672,10 +697,8 @@ if($pagina == 'turmas'){
                 ?>
                 </div>
 
-
-                <!-- Seria interessante aparecer aqui a ultima aula/atividade setada -->
+                
             </div>
-
 
             <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
                 integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
