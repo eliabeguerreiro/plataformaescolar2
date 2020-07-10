@@ -6,7 +6,7 @@ $c = isset($_GET['c'])? $_GET['c'] : 'nao';
 
 if($c == 'sim'){
     //var_dump($_SESSION);    
-    $sql = "DELETE FROM `aulas` WHERE id =  '" .$_SESSION['id']. "'";
+    $sql = "DELETE FROM `material` WHERE id =  '" .$_SESSION['id']. "'";
     mysqli_query($conn, $sql);
     //echo $sql;
     header("Location: index.php");
@@ -38,16 +38,16 @@ $_SESSION['id'] = $pg;
         </div>
         <?php
 
-            $sql = "SELECT * FROM aulas WHERE id = '" .$pg. "'";
+            $sql = "SELECT * FROM material WHERE id = '" .$pg. "'";
             //echo($sql);
-            $aula = mysqli_fetch_array(mysqli_query($conn, $sql));
+            $material = mysqli_fetch_array(mysqli_query($conn, $sql));
             //var_dump($aula);
 
         ?>
 
 
         <div class='alert alert-danger' role='alert'>
-            Tem certeza que você que apagar a aula: <?php echo$aula['titulo']; ?> ?
+            Tem certeza que você que apagar o material: <?php echo$material['titulo']; ?> ?
         </div>
         <a href='?c=sim'><button type='button' class='btn btn-danger'>Apagar</button></a>
         <a href='index.php'><button type='button' class='btn btn-info'>Voltar</button></a>
