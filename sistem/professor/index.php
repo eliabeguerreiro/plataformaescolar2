@@ -620,6 +620,9 @@ if($pagina == 'turmas'){
                      $rows = mysqli_num_rows(mysqli_query($conn, $sql));
                      //var_dump($rows);
                      $r = $rows;
+                     
+                     //isso é provisório..
+                     $r +=1;
                      while($r != 0){
                          //setar a turma e a disciplina
                          $sql = "SELECT * FROM `aulas` WHERE fila = " .$r. " AND disciplina = '" .$dadosProf['disciplina']. "'";
@@ -637,7 +640,7 @@ if($pagina == 'turmas'){
                          
                          
                          
-                         //RESOLVER PROBLEMA COMO CONTADOR
+                         //RESOLVER PROBLEMA DO CONTADOR
 
 
 
