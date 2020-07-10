@@ -37,7 +37,8 @@ if ($pagina == 'frequencia'){
             <a class="navbar-brand ml-auto mr-auto text-center" href="#">Painel do Professor
                 <!-- link para index sem pagina --></a>
 
-            <button type="button" class="btn btn-danger float-right"><a href='index.php'>Voltar</a></button>
+                <a href='index.php?area=painel-sala'><button type="button" class="btn btn-danger float-right">Voltar</button></a>
+
 
 
 
@@ -153,7 +154,8 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
                 <a class="navbar-brand ml-auto mr-auto text-center" href="#">Painel do Professor
                     <!-- link para index sem pagina --></a>
 
-                <button type="button" class="btn btn-danger float-right"><a href='index.php'>Voltar</a></button>
+                    <a href='index.php?area=painel-sala'><button type="button" class="btn btn-danger float-right">Voltar</button></a>
+
 
 
 
@@ -205,8 +207,8 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
                 <a class="navbar-brand ml-auto mr-auto text-center" href="#">Painel do Professor
                     <!-- link para index sem pagina --></a>
 
-                <button type="button" class="btn btn-danger float-right"><a
-                        href='index.php?area=painel-sala'>Voltar</a></button>
+                    <a href='index.php?area=painel-sala'><button type="button" class="btn btn-danger float-right">Voltar</button></a>
+
 
                 <div class="navbar-collapse offcanvas-collapse">
                     <ul class="navbar-nav mr-auto">
@@ -312,8 +314,7 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
                 <a class="navbar-brand ml-auto mr-auto text-center" href="#">Painel do Professor
                     <!-- link para index sem pagina --></a>
 
-                <button type="button" class="btn btn-danger float-right"><a
-                        href='index.php?area=painel-sala'>Voltar</a></button>
+                <a href='index.php?area=painel-sala'><button type="button" class="btn btn-danger float-right">Voltar</button></a>
 
 
 
@@ -412,8 +413,7 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
                 <a class="navbar-brand ml-auto mr-auto text-center" href="#">Painel do Professor
                     <!-- link para index sem pagina --></a>
 
-                <button type="button" class="btn btn-danger float-right"><a
-                        href='index.php?area=painel-sala'>Voltar</a></button>
+                    <a href='index.php?area=painel-sala'><button type="button" class="btn btn-danger float-right">Voltar</button></a>
 
 
 
