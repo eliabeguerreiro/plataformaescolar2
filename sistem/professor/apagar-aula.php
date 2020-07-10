@@ -1,7 +1,6 @@
 <?php
 include("../conexao.php");
 session_start();
-
 $c = isset($_GET['c'])? $_GET['c'] : 'nao';
 
 if($c == 'sim'){

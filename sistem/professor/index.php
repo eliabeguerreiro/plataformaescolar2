@@ -291,8 +291,7 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
                     <br><label>Atividade:</label><br>
                     <input type="link" value="NULL" name="atividade" placeholder="Link da atividade">
                     <br><label>Descrição:</label><br>
-                    <textarea type="text-box" name="detalhes" placeholder="Descrição da Aula" rows="4" cols="50">
-                    </textarea>
+                    <textarea type="text-box" name="detalhes" placeholder="Descrição da Aula" rows="4" cols="50"></textarea>
                     <br><label>Numero da Aula:</label><br>
                     <input type="number" name="numero" placeholder="Número da Aula"><br>
                     <input class="mt-1" type="submit" name="btnCadUsuario" value="Adicionar"><br>
@@ -393,8 +392,7 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
                     <br><label>Disciplina:</label><br>
                     <input type="codigo" name="disciplina" placeholder="Disciplina">
                     <br><label>Descrição:</label><br>
-                    <textarea type="text-box" name="detalhes" rows="4" cols="50">
-                    </textarea><br>
+                    <textarea type="text-box" name="detalhes" rows="4" cols="50"></textarea><br>
                     <input class="mt-1" type="submit" name="btnCadUsuario" value="Adicionar"><br>
                 </form>
 
@@ -490,8 +488,7 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
                     <br><label>Disciplina:</label><br>
                     <input type="codigo" name="disciplina" placeholder="Disciplina">
                     <br><label>Descrição:</label><br>
-                    <textarea type="text-box" name="detalhes" rows="4" cols="50">
-                    </textarea><br>
+                    <textarea type="text-box" name="detalhes" rows="4" cols="50"></textarea><br>
                     <input class="mt-1" type="submit" name="btnCadUsuario" value="Adicionar"><br>
                 </form>
             </div>
@@ -649,7 +646,7 @@ if($pagina == 'turmas'){
                                      <path fill-rule="evenodd"
                                          d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z" />
                                  </svg></button></a>
-                         <a href="editar-aula.php?id=#" title="Editar aula"><button type="button"
+                         <a href="editar-aula.php?id=<?php echo$aulas['id'];?>" title="Editar aula"><button type="button"
                                  class="btn btn-warning float-right "><svg width="1em" height="1em"
                                      viewBox="0 0 16 16" class="bi bi-pencil" fill="currentColor"
                                      xmlns="http://www.w3.org/2000/svg">
@@ -712,7 +709,7 @@ if($pagina == 'turmas'){
                                      <path fill-rule="evenodd"
                                          d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z" />
                                  </svg></button></a>
-                         <a href="editar-aula.php?id=#" title="Editar aula"><button type="button"
+                         <a href="editar-aula.php?id=<?php echo$material['id'];?>" title="Editar aula"><button type="button"
                                  class="btn btn-warning float-right "><svg width="1em" height="1em"
                                      viewBox="0 0 16 16" class="bi bi-pencil" fill="currentColor"
                                      xmlns="http://www.w3.org/2000/svg">
@@ -775,7 +772,7 @@ if($pagina == 'turmas'){
                                      <path fill-rule="evenodd"
                                          d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z" />
                                  </svg></button></a>
-                         <a href="editar-aula.php?id=#" title="Editar aula"><button type="button"
+                         <a href="editar-aula.php?id=<?php echo$atividade['id'];?>" title="Editar aula"><button type="button"
                                  class="btn btn-warning float-right "><svg width="1em" height="1em"
                                      viewBox="0 0 16 16" class="bi bi-pencil" fill="currentColor"
                                      xmlns="http://www.w3.org/2000/svg">
