@@ -70,13 +70,13 @@ if ($pagina == 'frequencia'){
             </div>
         </nav>
 
-
+        <center>
         <div class="junbotron container">
             <!-- Organizar lista de links das disciplinas recursivo ao banco de dados setado pelo professor -->
             <h2>Sistema de frequencia:</h2>
             Formulario que irá gerar uma tabela de presença semanal
         </div>
-
+        </center>
 
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
             integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
@@ -183,11 +183,11 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
                     </ul>
                 </div>
             </nav>
-
+            <center>
             <h2>Painel das Salas de Aula</h2>
             tabela com codigo de turmas pra o prof n esquecer
             </br>
-
+            </center>    
 
 
             <?php
@@ -232,7 +232,7 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
                 </div>
             </nav>
 
-
+            <center>
             <h2>Adicionar Aula</h2>
             </br>
 
@@ -273,20 +273,19 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
                             unset($_SESSION['msg']);
                         }
                 ?>
+                
                 <form method="POST" action="">
                     <label>Título da Aula:</label><br>
                     <input type="name" name="titulo" placeholder="Título"><br>
                     <label>Disciplina:</label><br>
                     <input type="name" name="disciplina" placeholder="Disciplina"><br>
                     <br><label>Turma:</label><br>
-                    <input type="codigo" name="turma" placeholder="Código da turma">
+                    <input type="codigo" name="turma" placeholder="Código da turma"><br>
                     <label>Videos:</label><br>
                     <input type="link" name="video1" placeholder="Código da url">
                     <input type="link" value="NULL" name="video2" placeholder="Código da url">
                     <input type="link" value="NULL" name="video4" placeholder="Código da url">
                     <input type="link" value="NULL" name="video3" placeholder="Código da url">
-                    <br><label>Turma:</label><br>
-                    <input type="codigo" name="turma" placeholder="Código da turma">
                     <br><label>Material de Apoio:</label><br>
                     <input type="link" value="NULL" name="material" placeholder="Link do material">
                     <br><label>Atividade:</label><br>
@@ -299,7 +298,7 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
                     <input class="mt-1" type="submit" name="btnCadUsuario" value="Adicionar"><br>
                 </form>
             </div>
-
+            </center>
             <?php
             }
 
@@ -344,7 +343,7 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
             </nav>
 
 
-
+            <center>
             <h2>Adicionar Material</h2>
             </br>
             <div class="junbotron container">
@@ -400,6 +399,7 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
                 </form>
 
             </div>
+            </center>
             <?php
             }
 
@@ -443,7 +443,7 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
                 </div>
             </nav>
 
-
+            <center>
             <h2>Adicionar Atividade</h2>
             </br>
             <div class="junbotron container">
@@ -495,6 +495,7 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
                     <input class="mt-1" type="submit" name="btnCadUsuario" value="Adicionar"><br>
                 </form>
             </div>
+            </center>
             <?php
             }
 
@@ -609,9 +610,10 @@ if($pagina == 'turmas'){
             </nav>
 
             <div class="junbotrom">
+                <center>
                 <!-- Organizar lista de links das turmas cadastradas a esse professor -->
                 <h3>Aulas Onlines</h3>
-
+                </center>
 
                 <div class="junbotron container">
                     <?php
@@ -622,41 +624,12 @@ if($pagina == 'turmas'){
                      $r = $rows;
                      
                      //isso é provisório..
-                     $r +=1;
+                     $r +=100;
                      while($r != 0){
                          //setar a turma e a disciplina
                          $sql = "SELECT * FROM `aulas` WHERE fila = " .$r. " AND disciplina = '" .$dadosProf['disciplina']. "'";
-                         //echo $sql;
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         //RESOLVER PROBLEMA DO CONTADOR
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                         //echo $sql;               
+        
                          if (mysqli_num_rows(mysqli_query($conn, $sql)) != 0){
                             $aulas = mysqli_fetch_array(mysqli_query($conn, $sql));       
                             ?>
@@ -688,7 +661,6 @@ if($pagina == 'turmas'){
 
                      </div>
                  </div>
-
                  <?php
                                                 
                         }
@@ -700,8 +672,133 @@ if($pagina == 'turmas'){
                 ?>
                 </div>
 
-                
             </div>
+
+            <center>
+            <h3>Materiais Onlines</h3>
+            </center>
+
+                <div class="junbotron container">
+                    <?php
+                     $sql = "SELECT * FROM `material` WHERE disciplina = '" .$dadosProf['disciplina']. "'";
+                     //echo $sql;
+                     $rows = mysqli_num_rows(mysqli_query($conn, $sql));
+                     //var_dump($rows);
+                     $r = $rows;
+                     
+                     //isso é provisório..
+                     $r +=100;
+                     while($r != 0){
+                         //setar a turma e a disciplina
+                         $sql = "SELECT * FROM `material` WHERE fila = " .$r. " AND disciplina = '" .$dadosProf['disciplina']. "'";
+                         //echo $sql;               
+        
+                         if (mysqli_num_rows(mysqli_query($conn, $sql)) != 0){
+                            $material = mysqli_fetch_array(mysqli_query($conn, $sql));       
+                            ?>
+                    <div class="card mb-1">
+                        <div class="card-body">
+                            
+                            <?php
+                            
+                         echo("<a href='#'>".$material['titulo'].' | '.$material['turma']."</a>");
+                         //var_dump($aulas);
+                         ?>     
+                         <!--Pensar em um jeito de mandar a aula pra outra pagina lá-->
+                         <a href="apagar-aula.php?id=<?php echo$material['id'];?>" title="Apagar aula"><button
+                                 type="button" class="btn btn-danger float-right"><svg width="1em" height="1em"
+                                     viewBox="0 0 16 16" class="bi bi-trash-fill" fill="currentColor"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                     <path fill-rule="evenodd"
+                                         d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z" />
+                                 </svg></button></a>
+                         <a href="editar-aula.php?id=#" title="Editar aula"><button type="button"
+                                 class="btn btn-warning float-right "><svg width="1em" height="1em"
+                                     viewBox="0 0 16 16" class="bi bi-pencil" fill="currentColor"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                     <path fill-rule="evenodd"
+                                         d="M11.293 1.293a1 1 0 0 1 1.414 0l2 2a1 1 0 0 1 0 1.414l-9 9a1 1 0 0 1-.39.242l-3 1a1 1 0 0 1-1.266-1.265l1-3a1 1 0 0 1 .242-.391l9-9zM12 2l2 2-9 9-3 1 1-3 9-9z" />
+                                     <path fill-rule="evenodd"
+                                         d="M12.146 6.354l-2.5-2.5.708-.708 2.5 2.5-.707.708zM3 10v.5a.5.5 0 0 0 .5.5H4v.5a.5.5 0 0 0 .5.5H5v.5a.5.5 0 0 0 .5.5H6v-1.5a.5.5 0 0 0-.5-.5H5v-.5a.5.5 0 0 0-.5-.5H3z" />
+                                 </svg></button></a>
+
+                     </div>
+                 </div>
+                 <?php
+                                                
+                        }
+                         
+                         $r -=1;
+                         //var_dump($rows);
+                         //var_dump($r);
+                     }   
+                ?>
+                </div>
+
+            </div>
+
+            <center>
+            <h3>Atividades Onlines</h3>
+            </center>
+
+                <div class="junbotron container">
+                    <?php
+                     $sql = "SELECT * FROM `atividade-prof` WHERE disciplina = '" .$dadosProf['disciplina']. "'";
+                     //echo $sql;
+                     $rows = mysqli_num_rows(mysqli_query($conn, $sql));
+                     //var_dump($rows);
+                     $r = $rows;
+                     
+                     //isso é provisório..
+                     $r +=100;
+                     while($r != 0){
+                         //setar a turma e a disciplina
+                         $sql = "SELECT * FROM `atividade-prof` WHERE fila = " .$r. " AND disciplina = '" .$dadosProf['disciplina']. "'";
+                         //echo $sql;               
+        
+                         if (mysqli_num_rows(mysqli_query($conn, $sql)) != 0){
+                            $atividade = mysqli_fetch_array(mysqli_query($conn, $sql));       
+                            ?>
+                    <div class="card mb-1">
+                        <div class="card-body">
+                            
+                            <?php
+                            
+                         echo("<a href='#'>".$atividade['titulo'].' | '.$atividade['turma']."</a>");
+                         //var_dump($aulas);
+                         ?>     
+                         <!--Pensar em um jeito de mandar a aula pra outra pagina lá-->
+                         <a href="apagar-aula.php?id=<?php echo$atividade['id'];?>" title="Apagar aula"><button
+                                 type="button" class="btn btn-danger float-right"><svg width="1em" height="1em"
+                                     viewBox="0 0 16 16" class="bi bi-trash-fill" fill="currentColor"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                     <path fill-rule="evenodd"
+                                         d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z" />
+                                 </svg></button></a>
+                         <a href="editar-aula.php?id=#" title="Editar aula"><button type="button"
+                                 class="btn btn-warning float-right "><svg width="1em" height="1em"
+                                     viewBox="0 0 16 16" class="bi bi-pencil" fill="currentColor"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                     <path fill-rule="evenodd"
+                                         d="M11.293 1.293a1 1 0 0 1 1.414 0l2 2a1 1 0 0 1 0 1.414l-9 9a1 1 0 0 1-.39.242l-3 1a1 1 0 0 1-1.266-1.265l1-3a1 1 0 0 1 .242-.391l9-9zM12 2l2 2-9 9-3 1 1-3 9-9z" />
+                                     <path fill-rule="evenodd"
+                                         d="M12.146 6.354l-2.5-2.5.708-.708 2.5 2.5-.707.708zM3 10v.5a.5.5 0 0 0 .5.5H4v.5a.5.5 0 0 0 .5.5H5v.5a.5.5 0 0 0 .5.5H6v-1.5a.5.5 0 0 0-.5-.5H5v-.5a.5.5 0 0 0-.5-.5H3z" />
+                                 </svg></button></a>
+
+                     </div>
+                 </div>
+                 <?php
+                                                
+                        }
+                         
+                         $r -=1;
+                         //var_dump($rows);
+                         //var_dump($r);
+                     }   
+                ?>
+                </div>
+
+            </div>         
 
             <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
                 integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
