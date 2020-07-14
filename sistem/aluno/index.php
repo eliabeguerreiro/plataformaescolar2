@@ -436,7 +436,7 @@ $disciplina = "disciplinateste01";
                          if ($aulas != NULL){
                             ?>
                             <button class="accordion border">
-                                <h4><?php echo($aulas['titulo'])?></h4>
+                                <h4><?php echo($aulas['titulo'].' | '.$aulas['turma'])?></h4>
                             </button>
                             <div class="panel">
                                 <h5 class="border-bottom">
@@ -461,8 +461,6 @@ $disciplina = "disciplinateste01";
                          }   
                  ?>
      </div>
-
-            
 
             <center>
             <h3>Materiais:</h3>
@@ -489,7 +487,7 @@ $disciplina = "disciplinateste01";
                             
                             ?>
                             <button class="accordion border">
-                                <h4><?php echo($material['titulo'])?></h4>
+                                <h4><?php echo($material['titulo'].' | '.$material['turma'])?></h4>
                             </button>
                             <div class="panel">
                                 <h5 class="border-bottom">
@@ -497,7 +495,7 @@ $disciplina = "disciplinateste01";
                                 </h5>
                                 <div class="border-bottom">
                                     <h5>Descrição</h5>
-                                    <p><?php echo($material['texto'])?></p>
+                                    <p><?php echo($material['titulo'].' | '.$material['turma'])?></p>
                                 </div>
                             </div>
                         <?php
@@ -515,7 +513,7 @@ $disciplina = "disciplinateste01";
 
                 <div class="junbotron container">
                     <?php
-                     $sql = "SELECT * FROM `atividade-prof` WHERE disciplina = '" .$dadosAluno['cod-turma']. "'";
+                     $sql = "SELECT * FROM `atividade-prof` WHERE disciplina = '" .$disciplina. "' AND  turma = '" .$dadosAluno['cod-turma']. "'";
                      //echo $sql;
                      $rows = mysqli_num_rows(mysqli_query($conn, $sql));
                      //var_dump($rows);
@@ -525,48 +523,31 @@ $disciplina = "disciplinateste01";
                      $r +=100;
                      while($r != 0){
                          //setar a turma e a disciplina
-                         $sql = "SELECT * FROM `atividade-prof` WHERE fila = " .$r. " AND disciplina = '" .$dadosAluno['cod-turma']. "'";
+                         $sql = "SELECT * FROM `atividade-prof` WHERE disciplina = '" .$disciplina. "' AND  turma = '" .$dadosAluno['cod-turma']. "' AND fila = '" .$r. "'";
                          //echo $sql;               
         
                          if (mysqli_num_rows(mysqli_query($conn, $sql)) != 0){
                             $atividade = mysqli_fetch_array(mysqli_query($conn, $sql));       
-                            ?>
-                    <div class="card mb-1">
-                        <div class="card-body">
                             
-                            <?php
-                            
-                         echo("<a href='#'>".$atividade['titulo'].' | '.$atividade['turma']."</a>");
-                         //var_dump($aulas);
-                         ?>     
-                         
-                         <a href="apagar-atividade.php?id=<?php echo$atividade['id'];?>" title="Apagar aula"><button
-                                 type="button" class="btn btn-danger float-right"><svg width="1em" height="1em"
-                                     viewBox="0 0 16 16" class="bi bi-trash-fill" fill="currentColor"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                     <path fill-rule="evenodd"
-                                         d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z" />
-                                 </svg></button></a>
-                         <a href="editar-atividade.php?id=<?php echo$atividade['id'];?>" title="Editar aula"><button type="button"
-                                 class="btn btn-warning float-right "><svg width="1em" height="1em"
-                                     viewBox="0 0 16 16" class="bi bi-pencil" fill="currentColor"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                     <path fill-rule="evenodd"
-                                         d="M11.293 1.293a1 1 0 0 1 1.414 0l2 2a1 1 0 0 1 0 1.414l-9 9a1 1 0 0 1-.39.242l-3 1a1 1 0 0 1-1.266-1.265l1-3a1 1 0 0 1 .242-.391l9-9zM12 2l2 2-9 9-3 1 1-3 9-9z" />
-                                     <path fill-rule="evenodd"
-                                         d="M12.146 6.354l-2.5-2.5.708-.708 2.5 2.5-.707.708zM3 10v.5a.5.5 0 0 0 .5.5H4v.5a.5.5 0 0 0 .5.5H5v.5a.5.5 0 0 0 .5.5H6v-1.5a.5.5 0 0 0-.5-.5H5v-.5a.5.5 0 0 0-.5-.5H3z" />
-                                 </svg></button></a>
-
-                     </div>
-                 </div>
-                 <?php
-                                                
+                         ?>
+                            <button class="accordion border">
+                                <h4><?php echo($atividade['titulo'].' | '.$atividade['turma'])?></h4>
+                            </button>
+                            <div class="panel">
+                                <h5 class="border-bottom">
+                                    <a href="<?php echo($atividade['link'])?>">Baixe aqui os arquivos</a>
+                                </h5>
+                                <div class="border-bottom">
+                                    <h5>Descrição</h5>
+                                    <p><?php echo($atividade['texto'])?></p>
+                                </div>
+                            </div>
+                        <?php
                         }
-                         
                          $r -=1;
                          //var_dump($rows);
                          //var_dump($r);
-                     }   
+                     } 
                 ?>
                 </div>
 
