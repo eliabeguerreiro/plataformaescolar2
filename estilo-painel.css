@@ -22,6 +22,12 @@
     transition: max-height 0.2s ease-out;
   }
 
+  #btnup{
+      position: relative;
+      margin-left:91%;
+      top:-26px;
+  }
+
   body{
     font-family: 'Poppins', sans-serif;
     background: #fafafa;   

@@ -437,6 +437,8 @@ $_SESSION['disciplina'] =  $disciplina;
                          //var_dump($aulas);
                          if ($aulas != NULL){
                             ?>
+                            <div class="card mb-1">
+                            <div class="card-body ">
                             <button class="accordion border">
                                 <h4><?php echo($aulas['titulo'].' | '.$aulas['turma'])?></h4>
                             </button>
@@ -455,6 +457,9 @@ $_SESSION['disciplina'] =  $disciplina;
                                     <p><?php echo($aulas['texto'])?></p>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                        
                         <?php
                         }
                          $r -=1;
@@ -488,6 +493,8 @@ $_SESSION['disciplina'] =  $disciplina;
                            // var_dump($material);
                             
                             ?>
+                            <div class="card mb-1">
+                            <div class="card-body ">
                             <button class="accordion border">
                                 <h4><?php echo($material['titulo'].' | '.$material['turma'])?></h4>
                             </button>
@@ -500,6 +507,9 @@ $_SESSION['disciplina'] =  $disciplina;
                                     <p><?php echo($material['titulo'].' | '.$material['turma'])?></p>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    
                         <?php
                         }
                          $r -=1;
@@ -533,8 +543,19 @@ $_SESSION['disciplina'] =  $disciplina;
                             
                          ?>
                         <div class="card mb-1">
-                            <div class="card-body">
-                                <h4 class="accordion border"><?php echo($atividade['titulo'].' | '.$atividade['turma'])?></h4>
+                            <div class="card-body ">
+                                <h4 class="accordion border "><?php echo($atividade['titulo'].' | '.$atividade['turma'])?>
+                                <div>
+                                <a><button type="button" class="btn btn-warning float-rigth " id="btnup" title="Subir Respostas"  data-toggle="modal" data-target="#exampleModal">
+                                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cloud-arrow-up" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383zm.653.757c-.757.653-1.153 1.44-1.153 2.056v.448l-.445.049C2.064 6.805 1 7.952 1 9.318 1 10.785 2.23 12 3.781 12h8.906C13.98 12 15 10.988 15 9.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 4.825 10.328 3 8 3a4.53 4.53 0 0 0-2.941 1.1z"/>
+                                                <path fill-rule="evenodd" d="M7.646 5.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 6.707V10.5a.5.5 0 0 1-1 0V6.707L6.354 7.854a.5.5 0 1 1-.708-.708l2-2z"/>
+                                            </svg>
+                                            </button>
+                                            </a>
+                                
+                                </div>
+                                </h4>
                                 <div class="panel">
                                     <h5 class="border-bottom">
                                         <a href="<?php echo($atividade['link'])?>">Baixe aqui os arquivos</a>
@@ -543,18 +564,36 @@ $_SESSION['disciplina'] =  $disciplina;
                                         <h5>Descrição</h5>
                                         <p><?php echo($atividade['texto'])?></p>
                                         <a href="index.php?area=painel-turma" title="Enviar respostas">
-                                            <button type="button" class="btn btn-danger float-right">
-                                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cloud-arrow-up" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383zm.653.757c-.757.653-1.153 1.44-1.153 2.056v.448l-.445.049C2.064 6.805 1 7.952 1 9.318 1 10.785 2.23 12 3.781 12h8.906C13.98 12 15 10.988 15 9.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 4.825 10.328 3 8 3a4.53 4.53 0 0 0-2.941 1.1z"/>
-                                                <path fill-rule="evenodd" d="M7.646 5.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 6.707V10.5a.5.5 0 0 1-1 0V6.707L6.354 7.854a.5.5 0 1 1-.708-.708l2-2z"/>
-                                            </svg>
-                                            </button>
                                         </a>
                                     </div>
                                 </div>
+                                
                             </div>
                         </div>
                         
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Subir Respostas atividade x</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                criar formulario aqui 
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Enviar</button>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+
+
+
                         <?php
                         }
                          $r -=1;
@@ -603,6 +642,17 @@ $_SESSION['disciplina'] =  $disciplina;
             console.log("window is loaded");
         };
 
+    </script>
+    <script type="text/javascript">
+            $('#exampleModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget) // Button that triggered the modal
+        var recipient = button.data('whatever') // Extract info from data-* attributes
+        // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+        // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+        var modal = $(this)
+        modal.find('.modal-title').text()
+        modal.find('.modal-body input').val(recipient)
+        })
     </script>
     </body>
     <?php
