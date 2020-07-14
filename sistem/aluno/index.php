@@ -352,6 +352,7 @@ if ($pagina == 'painel-turma'){
 }
 
 if ($pagina == 'painel-disciplina'){
+    //o nome da disciplina tem que vir do link gerado na pagina anterior 
 $disciplina = "disciplinateste01";
     ?>
 
