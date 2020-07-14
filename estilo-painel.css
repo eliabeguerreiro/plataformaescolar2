@@ -11,12 +11,12 @@
   }
   
 .active, .accordion:hover {
-    background-color: rgb(116, 156, 240);
+    background-color: rgb(204, 215, 238);
   }
   
  .panel {
     padding: 0 18px;
-    background-color: rgb(103, 128, 182);
+    background-color: rgb(204, 215, 238);
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
