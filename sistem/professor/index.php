@@ -669,7 +669,7 @@ if($pagina == 'turmas'){
                 ?>
                 </div>
 
-            </div>
+            
 
             <center>
             <h3>Materiais Onlines</h3>
@@ -732,7 +732,7 @@ if($pagina == 'turmas'){
                 ?>
                 </div>
 
-            </div>
+            
 
             <center>
             <h3>Atividades Onlines</h3>
@@ -795,7 +795,7 @@ if($pagina == 'turmas'){
                 ?>
                 </div>
 
-            </div>         
+                    
 
             <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
                 integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
