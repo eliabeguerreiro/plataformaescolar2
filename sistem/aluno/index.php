@@ -539,7 +539,8 @@ $_SESSION['disciplina'] =  $disciplina;
                          //echo $sql;               
         
                          if (mysqli_num_rows(mysqli_query($conn, $sql)) != 0){
-                            $atividade = mysqli_fetch_array(mysqli_query($conn, $sql));       
+                            $atividade = mysqli_fetch_array(mysqli_query($conn, $sql)); 
+                            $id=$atividade['id'];      
                             
                          ?>
                         <div class="card mb-1">
@@ -571,22 +572,27 @@ $_SESSION['disciplina'] =  $disciplina;
                             </div>
                         </div>
                         
-                        <!-- Modal -->
+                        <!-- Modal não está funcionando -->
                         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Subir Respostas atividade x</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">Subir Respostas atividade: <?php echo($atividade['titulo'].' | '.$atividade['turma'])?></h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
-                                criar formulario aqui 
+                                <form method="POST" action="enviar-atividade.php?id=<?php echo$id?>">
+                                <label>Documento Resposta:</label><br>
+                                <textarea type="text-box"  name="link-resposta" placeholder="cole aqui o link dos documentos de resposta" rows="4" cols="50"></textarea>
+                                <br><input class="mt-1 btn btn-primary" value="Enviar" type="submit" name="btnCadUsuario" ><br>
+                                
+                                </form>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Enviar</button>
+                                
                             </div>
                             </div>
                         </div>
@@ -595,6 +601,7 @@ $_SESSION['disciplina'] =  $disciplina;
 
 
                         <?php
+                        
                         }
                          $r -=1;
                          //var_dump($rows);
