@@ -15,11 +15,11 @@ var_dump($fila);
 $fila['max(fila)'] +=1;
 
 
-$sql = "INSERT INTO `atividade-aluno` VALUES ('" .$mach['titulo']. "', '" .$_POST['link']. "', '" .$_SESSION['dados-aluno']['cod-turma']. "', '" .$_SESSION['nome']. "', '" .$_SESSION['disciplina']. "', '" .$fila['max(fila)']. "')";
+$sql = "INSERT INTO `atividade-aluno` VALUES (0, '" .$mach['titulo']. "', '" .$_POST['link']. "', '" .$_SESSION['dados-aluno']['cod-turma']. "', '" .$_SESSION['nome']. "', '" .$_SESSION['disciplina']. "', '" .$fila['max(fila)']. "')";
 echo $sql;
 if (mysqli_query($conn, $sql)){
     $_SESSION['msg']='Enviado com Sucesso';
     header("Location: index.php?area=painel-disciplina");
 }else{
-    echo"deu negado";
+    echo'<br>'."deu negado";
 }
