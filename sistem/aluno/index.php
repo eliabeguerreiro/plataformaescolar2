@@ -12,10 +12,12 @@ $pagina=isset($_GET['area'])? $_GET['area'] : 'painel';
 
 if ($pagina == 'dados'){
     if(isset($_SESSION['msg'])){
+        echo'<center>';
         echo "<div class='alert alert-danger' role='alert'>";
         echo($_SESSION['msg']);
         echo"</div>";
         unset($_SESSION['msg']);
+        echo'</center>';
 }
     ?>
 <div id="content">
@@ -323,7 +325,8 @@ if ($pagina == 'painel-turma'){
         </div>
     </nav>
     <br>
-    criar gerador de disciplinas
+    <h1>Disciplinas:</h1><br>
+    <!-- Criar Gerador de Disciplina-->
     <a href='index.php?area=painel-disciplina'>Disciplina Teste 01  X prof x periodo x </a></br>
         </div>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -406,7 +409,7 @@ $_SESSION['disciplina'] =  $disciplina;
             <span class="navbar-toggler-icon"></span>
         </button>
         <a class="navbar-brand ml-auto mr-auto text-center" href="#">Painel do Aluno - Disciplina teste 01</a>
-        nome da disciplina tem que ser gerado 
+        <!--Nome da diciplina GERAR -->
         <a href="index.php?area=painel-turma"><button type="button" class="btn btn-danger float-right">Voltar</button></a>
 
     
@@ -502,9 +505,9 @@ $_SESSION['disciplina'] =  $disciplina;
         </div>
         </div>
 
-
-    <h3>Aulas:</h3>
-                </center>
+        <center>
+        <h3>Aulas:</h3>
+                
 
                 <div class="junbotron container">
                     <?php
