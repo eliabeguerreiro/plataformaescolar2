@@ -532,7 +532,7 @@ $_SESSION['disciplina'] =  $disciplina;
                             </button>
                             <div class="panel">
                                 <h5 class="border-bottom">
-                                    <a href="#player#">Videoaulas</a>
+                                    <a href="player.php?id=<?php echo$aulas['id'];?>">Videoaulas</a>
                                 </h5>
                                 <h5 class="border-bottom">
                                     <a href="<?php echo($aulas['material'])?>">Material auxiliar</a>

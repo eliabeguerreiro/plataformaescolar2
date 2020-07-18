@@ -1,16 +1,36 @@
 <?php
-include("/conexao.php");
+include("../conexao.php");
 session_start();
-var_dump($_SESSION);
-var_dump($_POST);
-$pg = isset($_GET['pg'])? $_GET['pg'] : 'link1';
+
+//fazer funcionar
+//var_dump($_SESSION);
+if(isset($_GET['id'])){
+    //var_dump($_SESSION);
+    if(isset($_GET['pg'])){
+        var_dump($_SESSION);
+        $_SESSION['msg'] = "Houve um mal funcionamento na plataforam informe seu Professor";
+        header("Location: player.php?area=painel-disciplina");
+    }else{
+        $pg = $_GET['pg'];
+    }
+}else{
+    var_dump($_SESSION);
+    $id = $_GET['id'];
+    $sql = "SELECT * FROM aulas WHERE id ='" .$id. "'";
+    echo$sql;
+    $videos = mysqli_fetch_array(mysqli_query($conn, $sql));
+    var_dump($videos);
+    $_SESSION['videos'] = $videos;
+    //header("Location: player.php?pg=link1");
+}
+
 //preparar sistema de escolha de aulas
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <title>PLayer</title>
+    <title>Player</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -38,10 +58,10 @@ $pg = isset($_GET['pg'])? $_GET['pg'] : 'link1';
             <div class="row">
                 <div class="col-12 float-right">
                     <div class="list-group" id="list-tab" role="tablist">
-                        <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home?pg=link1" role="tab">Video1</a>
-                        <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-home?pg=link2" role="tab" >Video2</a>
-                        <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-home?pg=link3" role="tab" >Video3</a>
-                        <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-home?pg=link4" role="tab" >Video4</a>
+                        <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="?pg=link1" role="tab">Video1</a>
+                        <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="?pg=link2" role="tab" >Video2</a>
+                        <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="?pg=link3" role="tab" >Video3</a>
+                        <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="?pg=link4" role="tab" >Video4</a>
                     </div>
                 </div>
             </div>
@@ -67,22 +87,21 @@ $pg = isset($_GET['pg'])? $_GET['pg'] : 'link1';
         player = new YT.Player('ytplayer', {
         height: '560',
         width: '640',
-        videoId: '<?php   ?>'
+        videoId: '<?php 
+
+                  if ($pg == 'link1' ){
+                        echo ($_SESSION['videos']['video1']);
+                  }elseif ($pg == 'link2' ){
+                        echo ($_SESSION['videos']['video2']);
+                  }elseif ($pg == 'link3' ){
+                        echo ($_SESSION['videos']['video3']);
+                  }elseif ($pg == 'link4' ){
+                        echo ($_SESSION['videos']['video4']);
+                  } 
+                  ?>'
         });
     }
     </script>
 </body>
 </html>
-<!--
-<a href="../controller/controller.deslogar.php" onclick="return confirm(Quer deslogar?');" title="Deslogar"><img
-        src="img/logout.png" class="icon2"></a>
-
-
-<script>
-var logout = confirm("Quer fazer logout?");
-if (logout) {
-    location.href = "../controller/controller.deslogar.php";
-}
-</script>
--->
 <?php
