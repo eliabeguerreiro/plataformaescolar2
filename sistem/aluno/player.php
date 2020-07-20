@@ -1,29 +1,17 @@
 <?php
-include("../conexao.php");
+include_once("../conexao.php");
+include_once("../funcoes.php");
 session_start();
-
-
+//var_dump($_SESSION);
+if (!$_SESSION['videos']){
+    $id = $_GET['id'];
+    $_SESSION['videos'] = Aulas($id);
+    header("Location: player.php");
+}
+$videos = $_SESSION['videos'];
 //?id=xx&pg==linkx
 $pg = isset($_GET['pg'])? $_GET['pg'] : 'link1';
-if(!$_GET['id']){
-    var_dump($_SESSION);
-    if(!$pg){
-        //var_dump($_SESSION);
-        //$_SESSION['msg'] = "Houve um mal funcionamento na plataforam informe seu Professor";
-        //header("Location: player.php?area=painel-disciplina");
-    }else{}
-}else{
-    //var_dump($_SESSION);
-    $id = $_GET['id'];
-    $sql = "SELECT video1, video2, video3, video4 FROM aulas WHERE id ='" .$id. "'";
-    //echo$sql;
-    $videos = mysqli_fetch_array(mysqli_query($conn, $sql));
-    //var_dump($videos);
-    $_SESSION['videos'] = $videos;
-    //header("Location: player.php?pg=link1");
-}
-
-//preparar sistema de escolha de aulas
+echo($pg).'<br>';
 ?>
 
 <!DOCTYPE html>
@@ -62,6 +50,11 @@ if ($pg === 'link1' ){
     echo ($videos['video4']);
 } 
 ?>
+
+<a href="?pg=link1">video 1</a>
+<a href="?pg=link2">video 2</a>
+<a href="?pg=link3">video 3</a>
+<a href="?pg=link4">video 4</a>
 </body>
 </html>
 <?php
