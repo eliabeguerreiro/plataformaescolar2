@@ -11,7 +11,7 @@ if (!$_SESSION['videos']){
 $videos = $_SESSION['videos'];
 //?id=xx&pg==linkx
 $pg = isset($_GET['pg'])? $_GET['pg'] : 'link1';
-echo($pg).'<br>';
+//echo($pg).'<br>';
 ?>
 
 <!DOCTYPE html>
@@ -36,25 +36,35 @@ echo($pg).'<br>';
     
     <link rel="stylesheet" href="estilo-painel.css">
 </head>
-<body >
-<!-- class="bg-dark" -->
+<body class="bg-dark">
+<center>
        <?php 
 
 if ($pg === 'link1' ){
-    echo ($videos['video1']);
+    echo (Video($videos['video1']));
 }elseif ($pg === 'link2' ){
-    echo ($videos['video2']);
+    echo (Video($videos['video2']));
 }elseif ($pg === 'link3' ){
-    echo ($videos['video3']);
+    echo (Video($videos['video3']));
 }elseif ($pg === 'link4' ){
-    echo ($videos['video4']);
+    echo (Video($videos['video4']));
 } 
 ?>
+<div id='ytplayer' class='col-10 mt-1'></div>
+<br>
 
-<a href="?pg=link1">video 1</a>
-<a href="?pg=link2">video 2</a>
-<a href="?pg=link3">video 3</a>
-<a href="?pg=link4">video 4</a>
+<div class="btn-group-lg">
+<a href="#"><buttontype="button" class="btn btn-danger"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M5.854 4.646a.5.5 0 0 1 0 .708L3.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0z"/>
+  <path fill-rule="evenodd" d="M2.5 8a.5.5 0 0 1 .5-.5h10.5a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+</svg></button></a>
+<a href="?pg=link1"><buttontype="button" class="btn btn-primary">Vídeo 1</button></a>
+<a href="?pg=link3"><buttontype="button" class="btn btn-primary">Vídeo 2</button></a>
+<a href="?pg=link4"><buttontype="button" class="btn btn-primary">Vídeo 3</button></a>
+<a href="?pg=link2"><buttontype="button" class="btn btn-primary">Vídeo 4</button></a>
+<a href="#"><buttontype="button" class="btn btn-warning">Registrar Presença</button></a>
+</div>
+</center>
 </body>
 </html>
 <?php
