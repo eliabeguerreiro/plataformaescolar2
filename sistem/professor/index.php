@@ -623,7 +623,7 @@ if($pagina == 'turmas'){
                          if (mysqli_num_rows(mysqli_query($conn, $sql)) != 0){
                             $aulas = mysqli_fetch_array(mysqli_query($conn, $sql));       
                             ?>
-                    <div class="card mb-1">
+                    <div class="card mb-1 shadow-lg p-3 mb-5 bg-white rounded">
                         <div class="card-body">
                             
                             <?php
@@ -686,7 +686,7 @@ if($pagina == 'turmas'){
                          if (mysqli_num_rows(mysqli_query($conn, $sql)) != 0){
                             $material = mysqli_fetch_array(mysqli_query($conn, $sql));       
                             ?>
-                    <div class="card mb-1">
+                    <div class="card mb-1 shadow-lg p-3 mb-5 bg-white rounded">
                         <div class="card-body">
                             
                             <?php
@@ -749,7 +749,7 @@ if($pagina == 'turmas'){
                          if (mysqli_num_rows(mysqli_query($conn, $sql)) != 0){
                             $atividade = mysqli_fetch_array(mysqli_query($conn, $sql));       
                             ?>
-                    <div class="card mb-1">
+                    <div class="card mb-1 shadow-lg p-3 mb-5 bg-white rounded">
                         <div class="card-body">
                             
                             <?php
