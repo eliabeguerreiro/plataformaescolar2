@@ -53,7 +53,7 @@ if ($pagina == 'frequencia'){
                         <a class="nav-link" href="">Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="" target="_blank">Developer</a>
+                        <a class="nav-link" href="recebidos.php" target="_blank">Caixa de entrada</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01"
@@ -582,7 +582,7 @@ if($pagina == 'turmas'){
                             <a class="nav-link" href='index.php?area=painel-sala'>Painel das Salas de Aulas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="" target="_blank">Developer</a>
+                            <a class="nav-link" href="recebidos.php" target="_blank">Caixa de entrada</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01"
