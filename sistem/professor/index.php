@@ -19,7 +19,7 @@ if ($pagina == 'frequencia'){
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Painel Professor</title>
+        <title>Frequencia</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
             integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
@@ -34,10 +34,9 @@ if ($pagina == 'frequencia'){
             <button class="navbar-toggler d-block float-left" type="button" id="navToggle">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand ml-auto mr-auto text-center" href="#">Painel do Professor
-                <!-- link para index sem pagina --></a>
+            <a class="navbar-brand ml-auto mr-auto text-center" href="index.php">Painel do Professor</a>
 
-                <a href='index.php?area=painel-sala'><button type="button" class="btn btn-danger float-right">Voltar</button></a>
+                <a href='index.php'><button type="button" class="btn btn-danger float-right">Voltar</button></a>
 
 
 
@@ -151,10 +150,9 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
                 <button class="navbar-toggler d-block float-left" type="button" id="navToggle">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand ml-auto mr-auto text-center" href="#">Painel do Professor
-                    <!-- link para index sem pagina --></a>
+                <a class="navbar-brand ml-auto mr-auto text-center" href="index.php">Painel do Professor</a>
 
-                    <a href='index.php?area=painel-sala'><button type="button" class="btn btn-danger float-right">Voltar</button></a>
+                    <a href='index.php'><button type="button" class="btn btn-danger float-right">Voltar</button></a>
 
 
 
@@ -204,8 +202,7 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
                 <button class="navbar-toggler d-block float-left" type="button" id="navToggle">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand ml-auto mr-auto text-center" href="#">Painel do Professor
-                    <!-- link para index sem pagina --></a>
+                <a class="navbar-brand ml-auto mr-auto text-center" href="index.php">Painel do Professor</a>
 
                     <a href='index.php?area=painel-sala'><button type="button" class="btn btn-danger float-right">Voltar</button></a>
 
@@ -311,9 +308,7 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
                 <button class="navbar-toggler d-block float-left" type="button" id="navToggle">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand ml-auto mr-auto text-center" href="#">Painel do Professor
-                    <!-- link para index sem pagina --></a>
-
+                <a class="navbar-brand ml-auto mr-auto text-center" href="index.php">Painel do Professor</a>
                 <a href='index.php?area=painel-sala'><button type="button" class="btn btn-danger float-right">Voltar</button></a>
 
 
@@ -410,8 +405,7 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
                 <button class="navbar-toggler d-block float-left" type="button" id="navToggle">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand ml-auto mr-auto text-center" href="#">Painel do Professor
-                    <!-- link para index sem pagina --></a>
+                <a class="navbar-brand ml-auto mr-auto text-center" href="index.php">Painel do Professor</a>
 
                     <a href='index.php?area=painel-sala'><button type="button" class="btn btn-danger float-right">Voltar</button></a>
 
@@ -552,7 +546,7 @@ if($pagina == 'turmas'){
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Painel do Professor</title>
+            <title>Turmas</title>
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
                 integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
                 crossorigin="anonymous">
@@ -568,10 +562,9 @@ if($pagina == 'turmas'){
                 <button class="navbar-toggler d-block float-left" type="button" id="navToggle">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand ml-auto mr-auto text-center" href="#">Painel do Professor
-                    <!-- link para index sem pagina --></a>
+                <a class="navbar-brand ml-auto mr-auto text-center" href="index.php">Painel do Professor</a>
 
-                <button type="button" class="btn btn-danger float-right"><a href='index.php'>Sair</a></button>
+                <a href='index.php?area=sair'><button type="button" class="btn btn-danger float-right">Sair</button></a>
 
 
 
@@ -638,7 +631,7 @@ if($pagina == 'turmas'){
                          echo("<a class = 'titulodaula' href='#'>".$aulas['titulo'].' | '.$aulas['turma']."</a>");
                          //var_dump($aulas);
                          ?>     
-                         <!--Pensar em um jeito de mandar a aula pra outra pagina lá-->
+                         
                          <a href="apagar-aula.php?id=<?php echo$aulas['id'];?>" title="Apagar aula"><button
                                  type="button" class="btn btn-danger float-right"><svg width="1em" height="1em"
                                      viewBox="0 0 16 16" class="bi bi-trash-fill" fill="currentColor"
@@ -838,4 +831,10 @@ if($pagina == 'turmas'){
 
     </html>
     <?php 
+}
+
+if ($pagina == 'sair'){
+    unset($_SESSION);
+    header('Location: ../../index.php');
+    echo('OXI');
 }

@@ -8,6 +8,11 @@ $_SESSION['dados-aluno'] = $dadosAluno;
 //var_dump($dadosAluno);
 $pagina=isset($_GET['area'])? $_GET['area'] : 'painel';
 
+if ($pagina == 'sair'){
+    unset($_SESSION);
+    header('Location: ../../index.php');
+    echo('OXI');
+}
 
 
 if ($pagina == 'dados'){
@@ -28,7 +33,7 @@ if ($pagina == 'dados'){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modelo sanfona</title>
+    <title>Dados do Aluno</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
@@ -48,7 +53,7 @@ if ($pagina == 'dados'){
         </button>
         <a class="navbar-brand ml-auto mr-auto text-center" href="#">Painel do Aluno - Dados</a>
         
-        <button type="button" class="btn btn-danger float-right">Sair</button>
+        <a href="index.php"><button type="button" class="btn btn-danger float-right">Voltar</button></a>
 
         
 
@@ -152,7 +157,7 @@ if($pagina == 'painel'){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modelo sanfona</title>
+    <title>Aluno x</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
@@ -172,7 +177,7 @@ if($pagina == 'painel'){
         </button>
         <a class="navbar-brand ml-auto mr-auto text-center" href="#">Painel do Aluno - Disciplinas</a>
         
-        <button type="button" class="btn btn-danger float-right">Sair</button>
+        <a href="?area=sair"><button type="button" class="btn btn-danger float-right">Sair</button></a>
 
         
 
@@ -186,7 +191,7 @@ if($pagina == 'painel'){
                     <a class="nav-link" href="">Notifications</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">Profile</a>
+                    <a class="nav-link" href="index.php?area=dados">Dados Pessoais</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="" target="_blank">Developer</a>
@@ -271,7 +276,7 @@ if ($pagina == 'painel-turma'){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modelo sanfona</title>
+    <title>Turma x</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
@@ -392,7 +397,7 @@ $_SESSION['disciplina'] =  $disciplina;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modelo sanfona</title>
+    <title>Disciplina x</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
