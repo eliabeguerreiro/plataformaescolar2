@@ -90,9 +90,31 @@ if ($pagina == 'dados'){
 
 
         <div class="junbotron">
-            <!-- Organizar lista de links das disciplinas recursivo ao banco de dados setado pelo professor -->
-            <h2>Dados do aluno:</h2>
-            os dados aparecem aqui
+                <div class="card">
+                <div class="card-header">
+                    <center>
+                <h2>Dados do aluno</h2>
+                    </center>
+                </div>
+                <div class="card-body w-100 p-3">
+                    <h5 class="card-title">Nome:</h5>
+                    <!-- Adicionar um alert simples -->
+                    <h5 class="card-title">CPF:</h5>
+                    <h5 class="card-title">Nome da mãe:</h5>
+                    <h5 class="card-title">Telefone:</h5>
+                    <h5 class="card-title">Email:</h5>
+                    <h5 class="card-title">Endereço</h5>
+                    <h5 class="card-title">Rua:</h5>
+                    <h5 class="card-title">CEP:</h5>
+                    <h5 class="card-title">Bairro:</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary"></a>
+                </div>
+                </div>
+                <?php
+                    var_dump($_SESSION['dados-aluno']);
+                ?>
+        
         </div>
 
 

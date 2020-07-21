@@ -20,6 +20,7 @@ $sql = "SELECT * FROM `atividade-aluno`";
     <link rel="stylesheet" href="estilo-painel.css">
 </head>
 <body>
+    <a href='index.php'><button type="button" class="btn btn-danger float-right">Voltar</button></a>
     <div class="junbotron container w-75 p-3">
     <table class="table">
     <thead>
