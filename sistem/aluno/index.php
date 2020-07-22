@@ -96,70 +96,65 @@ if ($pagina == 'dados'){
                 <h2>Dados do aluno</h2>
                     </center>
                 </div>
-                <div class="card-body w-100 p-3">
-                    
+
+                <div class="card-body w-100 p-3">                    
                     <div class="w-100 p-3 container">
                     <h5 class="card-title">Nome:</h5>
                         <div class="alert alert-info" role="alert">
-                        <?php echo($_SESSION['dados-aluno']['nome']);?>
+                            <?php echo($_SESSION['dados-aluno']['nome']);?>
                         </div>
                     </div>
 
                     <div class="w-100 p-3 container">
                         <h5 class="card-title">CPF:</h5>
                         <div class="alert alert-info" role="alert">
-                        <?php echo($_SESSION['dados-aluno']['cpf']);?>
+                            <?php echo($_SESSION['dados-aluno']['cpf']);?>
                         </div>
                     </div>
 
                     <div class="w-100 p-3 container">
                     <h5 class="card-title">Nome da mãe:</h5>
-                    
                     <div class="alert alert-info" role="alert">
-                    <?php echo($_SESSION['dados-aluno']['mae']);?>
+                            <?php echo($_SESSION['dados-aluno']['mae']);?>
                         </div>
-                        </div>
+                    </div>
                     <div class="w-100 p-3 container">
                     <h5 class="card-title">Telefone:</h5>
-                    
-                    <div class="alert alert-info" role="alert">
-                    <?php echo($_SESSION['dados-aluno']['telefone']);?>
-                        </div>
-                        </div>
+                        <div class="alert alert-info" role="alert">
+                            <?php echo($_SESSION['dados-aluno']['telefone']);?>
+                    </div>
+                    </div>
                     <div class="w-100 p-3 container">
                     <h5 class="card-title">Email:</h5>
-                    
-                    <div class="alert alert-info" role="alert">
-                    <?php echo($_SESSION['dados-aluno']['email']);?>
+                        <div class="alert alert-info" role="alert">
+                            <?php echo($_SESSION['dados-aluno']['email']);?>
                         </div>
-                        </div>
-                
-                        <div class="w-100 p-3 container">
-                    <h5 class="card-title">Rua:</h5>
-                    <div class="alert alert-info" role="alert">
-                    <?php echo($_SESSION['dados-aluno']['rua']);?>
-                        </div>
-                        </div>
-                        <div class="w-100 p-3 container">
-                    <h5 class="card-title">CEP:</h5>
-                    <div class="alert alert-info" role="alert">
-                    <?php echo($_SESSION['dados-aluno']['cep']);?>
-                        </div>
+                    </div>
                     <div class="w-100 p-3 container">
-                    <h5 class="card-title">Cidade:</h5>
-                    <div class="alert alert-info" role="alert">
-                    <?php echo($_SESSION['dados-aluno']['cidade']);?>
+                    <h5 class="card-title">Rua:</h5>
+                        <div class="alert alert-info" role="alert">
+                            <?php echo($_SESSION['dados-aluno']['rua']);?>
+                        </div>
                     </div>
+                    <div class="w-100 p-3 container">
+                        <h5 class="card-title">CEP:</h5>
+                        <div class="alert alert-info" role="alert">
+                            <?php echo($_SESSION['dados-aluno']['cep']);?>
+                        </div>
                     </div>
+                    <div class="w-100 p-3 container">
+                        <h5 class="card-title">Cidade:</h5>
+                        <div class="alert alert-info" role="alert">
+                            <?php echo($_SESSION['dados-aluno']['cidade']);?>
+                        </div>
+                    </div>
+                    
                     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                     <a href="#" class="btn btn-primary">botão pra editar</a>
                 </div>
                 </div>
                 <?php
-                    var_dump($_SESSION['dados-aluno']);
-
-                    
-                
+                    var_dump($_SESSION['dados-aluno']);               
                 ?> 
         
         </div>
