@@ -14,7 +14,6 @@ if ($pagina == 'sair'){
     echo('OXI');
 }
 
-
 if ($pagina == 'dados'){
     if(isset($_SESSION['msg'])){
         echo'<center>';
@@ -154,7 +153,7 @@ if ($pagina == 'dados'){
                 </div>
                 </div>
                 <?php
-                    var_dump($_SESSION);               
+                    //var_dump($_SESSION);               
                 ?> 
         
         </div>

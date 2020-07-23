@@ -21,5 +21,6 @@ if (mysqli_query($conn, $sql)){
     $_SESSION['msg']='Enviado com Sucesso';
     header("Location: index.php?area=painel-disciplina");
 }else{
-    echo'<br>'."deu negado";
+    $_SESSION['msg']='Falha ao enviar';
+    header("Location: index.php?area=painel-disciplina");
 }
