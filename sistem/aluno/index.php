@@ -148,9 +148,9 @@ if ($pagina == 'dados'){
                             <?php echo($_SESSION['dados-aluno']['cidade']);?>
                         </div>
                     </div>
-                    
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">botão pra editar</a>
+                    <div class="w-100 p-3 container">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Editar dados</button>
+                    </div>
                 </div>
                 </div>
                 <?php
@@ -158,6 +158,52 @@ if ($pagina == 'dados'){
                 ?> 
         
         </div>
+
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Editar Dados</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+                
+            </div>
+            <div class="modal-body">
+                <form method="POST" action ="enviar-dados.php">
+                <label>Nome:</label><br>
+                <input type="text" value="<?php echo($_SESSION['dados-aluno']['nome']);?>" name="nome" placeholder="<?php echo($_SESSION['dados-aluno']['nome']);?>"><br>
+                <label>CPF:</label><br>
+                <input type="text" value="<?php echo($_SESSION['dados-aluno']['cpf']);?>" name="cpf" placeholder="<?php echo($_SESSION['dados-aluno']['cpf']);?>"><br>
+                <br><label>Nome da Mãe:</label><br>
+                <input type="text" value="<?php echo($_SESSION['dados-aluno']['mae']);?>" name="mae" placeholder="<?php echo($_SESSION['dados-aluno']['mae']);?>"><br>
+                <label>Telefone:</label><br>
+                <input type="fone" value="<?php echo($_SESSION['dados-aluno']['telefone']);?>" name="telefone" placeholder="<?php echo($_SESSION['dados-aluno']['telefone']);?>">
+                <br><label>Email:</label><br>
+                <input type="email" value="<?php echo($_SESSION['dados-aluno']['email']);?>" name="email" placeholder="<?php echo($_SESSION['dados-aluno']['email']);?>">
+                <br><label>Rua:</label><br>
+                <input type="text" value="<?php echo($_SESSION['dados-aluno']['rua']);?>" name="rua" placeholder="<?php echo($_SESSION['dados-aluno']['rua']);?>">
+                <br><label>CEP:</label><br>
+                <input type="text"  name="cep" placeholder="<?php echo($_SESSION['dados-aluno']['cep']);?>"><?php echo($_SESSION['dados-aluno']['cep']);?>
+                <br><label>Cidade:</label><br>
+                <input type="text" value="<?php echo($_SESSION['dados-aluno']['cidade']);?>" name="cidade" placeholder="<?php echo($_SESSION['dados-aluno']['cidade']);?>"><br>
+                <input class="mt-1" type="submit" name="btnCadUsuario" value="Editar"><br>
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+            </div>
+            </div>
+        </div>
+        </div>
+
+
+
+
+
 
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
