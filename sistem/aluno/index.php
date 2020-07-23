@@ -154,7 +154,7 @@ if ($pagina == 'dados'){
                 </div>
                 </div>
                 <?php
-                    var_dump($_SESSION['dados-aluno']);               
+                    var_dump($_SESSION);               
                 ?> 
         
         </div>
@@ -188,7 +188,7 @@ if ($pagina == 'dados'){
                 <input type="text"  name="cep" placeholder="<?php echo($_SESSION['dados-aluno']['cep']);?>"><?php echo($_SESSION['dados-aluno']['cep']);?>
                 <br><label>Cidade:</label><br>
                 <input type="text" value="<?php echo($_SESSION['dados-aluno']['cidade']);?>" name="cidade" placeholder="<?php echo($_SESSION['dados-aluno']['cidade']);?>"><br>
-                <input class="mt-1" type="submit" name="btnCadUsuario" value="Editar"><br>
+                
                 
             </div>
             <div class="modal-footer">
