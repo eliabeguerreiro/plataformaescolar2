@@ -369,6 +369,7 @@ if($pagina == 'painel'){
 }
 
 if ($pagina == 'painel-turma'){
+    unset($_SESSION['disciplina']);
     if(isset($_SESSION['msg'])){
         echo "<div class='alert alert-danger' role='alert'>";
         echo($_SESSION['msg']);
@@ -440,7 +441,32 @@ if ($pagina == 'painel-turma'){
     <br>
     <h1>Disciplinas:</h1><br>
     <!-- Criar Gerador de Disciplina-->
-    <a href='index.php?area=painel-disciplina'>Disciplina Teste 01  X prof x periodo x </a></br>
+
+    <?php
+        //limite de disciplinas abaixo
+        $c = 0;
+        while( $c != 10){
+            $disci = "SELECT * FROM disciplina WHERE id = '".$c."' AND `cod-turma` =  '" .$_SESSION['dados-aluno']['cod-turma']. "'";
+            //echo $disci.'<br>';
+            $disciplina = mysqli_fetch_array(mysqli_query($conn, $disci));
+            if($disciplina !=0){ 
+                //var_dump($disciplina);
+                ?>
+                <div class="card mb-1 shadow-lg p-3 mb-5 bg-white rounded">
+                    <div class="card-body">
+                        <center>
+                        <a href='index.php?area=painel-disciplina&d=<?php echo($disciplina['codname']); ?>'><h4><?php echo($disciplina['codname']); ?></h4></a></br>
+                        </center>
+                    </div>
+                </div>
+                <?php
+            }  
+            $c+=1;
+} 
+
+
+    ?>
+    
         </div>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -493,10 +519,15 @@ if ($pagina == 'painel-disciplina'){
         echo"</div>";
         unset($_SESSION['msg']);
 }
-    //o nome da disciplina tem que vir do link gerado na pagina anterior 
-$disciplina = "disciplinateste01";
+
+$disciplina=isset($_GET['d'])? $_GET['d'] : 'false';
+if ($disciplina == 'false'){
+    $_SESSION['msg']= 'Erro com o sistema de disciplinas'; 
+    header("Location: index.php?area=painel-turma");
+}
 $_SESSION['disciplina'] =  $disciplina;
-    ?>
+
+?>
 
 <div id="content">
 <!DOCTYPE html>

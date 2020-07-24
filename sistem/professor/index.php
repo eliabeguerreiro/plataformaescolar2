@@ -7,7 +7,6 @@ $sql = "SELECT * FROM `dados-professor` WHERE matricula = '" .$_SESSION['matricu
 $dadosProf = mysqli_fetch_array(mysqli_query($conn, $sql));
 //var_dump($dadosAluno);
 $pagina=isset($_GET['area'])? $_GET['area'] : 'turmas';
-$professor = $_SESSION['matricula'];
 
 if ($pagina == 'frequencia'){
     ?>
@@ -536,7 +535,7 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
 }
 
 if($pagina == 'turmas'){
-
+    var_dump($_SESSION);
     ?>
     <div id="content">
 
