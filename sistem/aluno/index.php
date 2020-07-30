@@ -440,7 +440,7 @@ if ($pagina == 'painel-turma'){
     </nav>
     <br>
     <h1>Disciplinas:</h1><br>
-    <!-- Criar Gerador de Disciplina-->
+    
 
     <?php
         //limite de disciplinas abaixo
@@ -468,7 +468,7 @@ if ($pagina == 'painel-turma'){
     ?>
     
         </div>
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
@@ -552,7 +552,7 @@ $_SESSION['disciplina'] =  $disciplina;
         <button class="navbar-toggler d-block float-left" type="button" id="navToggle">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand ml-auto mr-auto text-center" href="#">Painel do Aluno - Disciplina teste 01</a>
+        <a class="navbar-brand ml-auto mr-auto text-center" href="#">Painel do Aluno - <?php echo($disciplina); ?> </a>
         <!--Nome da diciplina GERAR -->
         <a href="index.php?area=painel-turma"><button type="button" class="btn btn-danger float-right">Voltar</button></a>
 
@@ -806,7 +806,7 @@ $_SESSION['disciplina'] =  $disciplina;
             
 
 
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
@@ -857,4 +857,3 @@ $_SESSION['disciplina'] =  $disciplina;
     </body>
     <?php
         }
-        ?>

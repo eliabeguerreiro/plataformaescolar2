@@ -535,7 +535,7 @@ if ($pagina == 'painel-sala' || $pagina == 'painel-sala-aula' || $pagina == 'pai
 }
 
 if($pagina == 'turmas'){
-    var_dump($_SESSION);
+    //var_dump($_SESSION);
     ?>
     <div id="content">
 
@@ -598,6 +598,154 @@ if($pagina == 'turmas'){
                 </div>
             </nav>
 
+            <body>
+
+            <?php
+        //limite de disciplinas abaixo
+        $c = 0;
+        while( $c != 10){
+            $disci = "SELECT * FROM disciplina WHERE id = '".$c."' AND `matric-prof` =  '" .$_SESSION['matricula']. "'";
+            //echo $disci.'<br>';
+            $disciplina = mysqli_fetch_array(mysqli_query($conn, $disci));
+            if($disciplina !=0){ 
+                //var_dump($disciplina);
+                ?>
+                <div class="card mb-1 shadow-lg p-3 mb-5 bg-white rounded">
+                    <div class="card-body">
+                        <center>
+                        <a href='index.php?area=disciplina&d=<?php echo($disciplina['codname']); ?>'><h4><?php echo($disciplina['codname']); ?></h4></a></br>
+                        </center>
+                    </div>
+                </div>
+                <?php
+            }  
+            $c+=1;
+} 
+
+
+    ?>
+                
+
+
+
+            </body>
+            
+            
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+                integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+                crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+                integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+                crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+                integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+                crossorigin="anonymous"></script>
+            <script>
+            var acc = document.getElementsByClassName("accordion");
+            var i;
+
+            for (i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var panel = this.nextElementSibling;
+                    if (panel.style.maxHeight) {
+                        panel.style.maxHeight = null;
+                    } else {
+                        panel.style.maxHeight = panel.scrollHeight + "px";
+                    }
+                });
+            }
+            </script>
+            <script>
+            $(document).ready(function() {
+                console.log("document is ready");
+                $('[data-toggle="offcanvas"], #navToggle').on('click', function() {
+                    $('.offcanvas-collapse').toggleClass('open')
+                })
+            });
+            window.onload = function() {
+                console.log("window is loaded");
+            };
+            </script>
+        </body>
+    </div>
+
+    </html>
+    <?php 
+}
+
+
+
+if($pagina == 'disciplina'){
+    //var_dump($_SESSION);
+    $disciplina=isset($_GET['d'])? $_GET['d'] : 'false';
+    if ($disciplina == 'false'){
+        $_SESSION['msg']= 'Erro com o sistema de disciplinas'; 
+        header("Location: index.php?area=painel-turma");
+    }
+    $_SESSION['disciplina'] =  $disciplina;
+    ?>
+    <div id="content">
+
+        <!DOCTYPE html>
+        <html lang="pt">
+
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Turmas</title>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+                integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+                crossorigin="anonymous">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js"></script>
+            <link rel="stylesheet" href="../../estilo-painel.css">
+        </head>
+
+        <body>
+            <nav class="navbar navbar-expand-lg fixed-top shadow navbar-dark navbar-offcanvas"
+                style="background-color: #155592;">
+
+                <button class="navbar-toggler d-block float-left" type="button" id="navToggle">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand ml-auto mr-auto text-center" href="index.php">Painel do Professor<?php echo' | '.$disciplina;?></a>
+
+                <a href='index.php?area=turmas'><button type="button" class="btn btn-danger float-right">Voltar</button></a>
+
+
+
+                <div class="navbar-collapse offcanvas-collapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="">
+                                Prof fulano de tal<span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href='index.php?area=frequencia'>Frequencia das Turmas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href='index.php?area=painel-sala'>Painel das Salas de Aulas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="recebidos.php" target="_blank">Caixa de entrada</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Settings</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown01">
+                                <a class="dropdown-item" href="">Action</a>
+                                <a class="dropdown-item" href="">Another action</a>
+                                <a class="dropdown-item" href="">Something else here</a>
+                            </div>
+                        </li>
+                    </ul>
+
+
+                </div>
+            </nav>
+
             <div class="junbotrom">
                 <center>
                 <!-- Organizar lista de links das turmas cadastradas a esse professor -->
@@ -606,7 +754,7 @@ if($pagina == 'turmas'){
 
                 <div class="junbotron container">
                     <?php
-                     $sql = "SELECT * FROM `aulas` WHERE disciplina = '" .$dadosProf['disciplina']. "'";
+                     $sql = "SELECT * FROM `aulas` WHERE disciplina = '" .$disciplina. "'";
                      //echo $sql;
                      $rows = mysqli_num_rows(mysqli_query($conn, $sql));
                      //var_dump($rows);
@@ -616,7 +764,7 @@ if($pagina == 'turmas'){
                      $r +=100;
                      while($r != 0){
                          //setar a turma e a disciplina
-                         $sql = "SELECT * FROM `aulas` WHERE fila = " .$r. " AND disciplina = '" .$dadosProf['disciplina']. "'";
+                         $sql = "SELECT * FROM `aulas` WHERE fila = " .$r. " AND disciplina = '" .$disciplina. "'";
                          //echo $sql;               
         
                          if (mysqli_num_rows(mysqli_query($conn, $sql)) != 0){
@@ -627,7 +775,7 @@ if($pagina == 'turmas'){
                             
                             <?php
                             
-                         echo("<a class = 'titulodaula' href='#'>".$aulas['titulo'].' | '.$aulas['turma']."</a>");
+                         echo("<a class = 'titulodaula' href='#'>".$aulas['titulo'].' | '.$aulas['turma'].' | '.$disciplina."</a>");
                          //var_dump($aulas);
                          ?>     
                          
@@ -669,7 +817,7 @@ if($pagina == 'turmas'){
 
                 <div class="junbotron container">
                     <?php
-                     $sql = "SELECT * FROM `material` WHERE disciplina = '" .$dadosProf['disciplina']. "'";
+                     $sql = "SELECT * FROM `material` WHERE disciplina = '" .$disciplina. "'";
                      //echo $sql;
                      $rows = mysqli_num_rows(mysqli_query($conn, $sql));
                      //var_dump($rows);
@@ -679,7 +827,7 @@ if($pagina == 'turmas'){
                      $r +=100;
                      while($r != 0){
                          //setar a turma e a disciplina
-                         $sql = "SELECT * FROM `material` WHERE fila = " .$r. " AND disciplina = '" .$dadosProf['disciplina']. "'";
+                         $sql = "SELECT * FROM `material` WHERE fila = " .$r. " AND disciplina = '" .$disciplina. "'";
                          //echo $sql;               
         
                          if (mysqli_num_rows(mysqli_query($conn, $sql)) != 0){
@@ -690,10 +838,10 @@ if($pagina == 'turmas'){
                             
                             <?php
                             
-                         echo("<a href='#'>".$material['titulo'].' | '.$material['turma']."</a>");
+                         echo("<a href='#'>".$material['titulo'].' | '.$material['turma'].' | '.$disciplina."</a>");
                          //var_dump($aulas);
                          ?>     
-                         <!--Pensar em um jeito de mandar a aula pra outra pagina lá-->
+                         
                          <a href="apagar-material.php?id=<?php echo$material['id'];?>" title="Apagar aula"><button
                                  type="button" class="btn btn-danger float-right"><svg width="1em" height="1em"
                                      viewBox="0 0 16 16" class="bi bi-trash-fill" fill="currentColor"
@@ -732,7 +880,7 @@ if($pagina == 'turmas'){
 
                 <div class="junbotron container">
                     <?php
-                     $sql = "SELECT * FROM `atividade-prof` WHERE disciplina = '" .$dadosProf['disciplina']. "'";
+                     $sql = "SELECT * FROM `atividade-prof` WHERE disciplina = '" .$disciplina. "'";
                      //echo $sql;
                      $rows = mysqli_num_rows(mysqli_query($conn, $sql));
                      //var_dump($rows);
@@ -742,7 +890,7 @@ if($pagina == 'turmas'){
                      $r +=100;
                      while($r != 0){
                          //setar a turma e a disciplina
-                         $sql = "SELECT * FROM `atividade-prof` WHERE fila = " .$r. " AND disciplina = '" .$dadosProf['disciplina']. "'";
+                         $sql = "SELECT * FROM `atividade-prof` WHERE fila = " .$r. " AND disciplina = '" .$disciplina. "'";
                          //echo $sql;               
         
                          if (mysqli_num_rows(mysqli_query($conn, $sql)) != 0){
@@ -753,7 +901,7 @@ if($pagina == 'turmas'){
                             
                             <?php
                             
-                         echo("<a href='#'>".$atividade['titulo'].' | '.$atividade['turma']."</a>");
+                         echo("<a href='#'>".$atividade['titulo'].' | '.$atividade['turma'].' | '.$disciplina."</a>");
                          //var_dump($aulas);
                          ?>     
                          
