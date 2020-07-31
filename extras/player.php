@@ -42,7 +42,7 @@
             </div>
         </div>
         
-        
+
             
             <div class="row">
                 <div class="col-12 float-right">
@@ -55,11 +55,6 @@
                 </div>
             </div>
             
-
-
-
-
-
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
