@@ -43,11 +43,11 @@ $pagina=isset($_GET['pg'])? $_GET['pg'] : 'null';
             <br>
             <br>
             
-            <a class="text-decoration-none text-reset" href="../src.php?pg=painel"><button type="button"
+            <a class="text-decoration-none text-reset" href="../professor/"><button type="button"
                     class="btn btn-warning">Painel Professor</button></a>
-            <a class="text-decoration-none text-reset" href="../src.php?pg=painel"><button type="button"
+            <a class="text-decoration-none text-reset" href="../aluno/"><button type="button"
                     class="btn btn-warning">Painel Aluno</button></a>
-            <a class="text-decoration-none text-reset" href="../src.php?pg=painel"><button type="button"
+            <a class="text-decoration-none text-reset" href="?pg=sair"><button type="button"
                     class="btn btn-danger">Sair</button></a>
         </div>
     </center>
@@ -73,30 +73,36 @@ $pagina=isset($_GET['pg'])? $_GET['pg'] : 'null';
 <?php
 
 
-if ($pagina === 'null');{
+if ($pagina == 'null'){
     echo'nadica';
 }
 
-if ($pagina === 'cadalun');{
+if ($pagina == 'cadalun'){
     echo'cadastra aluno';
 }
 
-if ($pagina === 'excalun');{
+if ($pagina == 'excalun'){
     echo'excluir aluno';
 }
 
-if ($pagina == 'cadprof');{
+if ($pagina == 'cadprof'){
     echo'cadastrar professor';
 }
 
-if ($pagina == 'excprof');{
+if ($pagina == 'excprof'){
     echo'excluir professor';
 }
 
-if ($pagina == 'caddis');{
+if ($pagina == 'caddis'){
     echo'cadastrar disciplina';
 }
 
-if ($pagina == 'excdis');{
+if ($pagina == 'excdis'){
     echo'excluir disciplina';
+}
+
+if ($pagina == 'sair'){
+    unset($_SESSION);
+    header('Location: ../../index.php');
+    echo('OXI');
 }
